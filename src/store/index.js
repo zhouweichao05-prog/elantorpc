@@ -5,9 +5,13 @@ export default createStore({
     siteTitle: 'Elantor - Professional ULV Cold Fogger',
     company: {
       name: 'Elantor',
-      email: 'info@elantor.com',
-      phone: '+86 123 4567 8901',
-      address: 'No.123 Industrial Zone, Guangzhou, China'
+      email: 'elant_industrial@sina.com',
+      phone: '+86 19540736965',
+      whatsapp: '+86 19540736965',
+      wechat: 'Elantor',
+      facebook: 'Elantor',
+      address: 'Xing Business Building 310, Bulong Road, Bantian Street, Longgang District, Shenzhen, China, 518118',
+      businessHours: 'Monday - Friday: 9:00 AM - 6:00 PM (GMT+8)'
     }
   },
   getters: {

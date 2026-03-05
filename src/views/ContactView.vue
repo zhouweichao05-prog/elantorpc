@@ -15,14 +15,36 @@
           <div v-for="item in contactDetails" :key="item.title" class="info-card">
             <div class="info-icon">{{ item.icon }}</div>
             <h3>{{ item.title }}</h3>
-            <p>{{ item.value }}</p>
+            <p v-if="item.link" class="info-link">
+              <a :href="item.link" target="_blank" rel="noopener noreferrer">{{ item.value }}</a>
+            </p>
+            <p v-else>{{ item.value }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section bg-gray-50">
+      <div class="container">
+        <h2 class="section-title">Connect With Us</h2>
+        <p class="section-subtitle">Follow us on social media for the latest updates and product news.</p>
+        
+        <div class="social-grid">
+          <div v-for="social in socialMedia" :key="social.name" class="social-card">
+            <div class="social-icon">{{ social.icon }}</div>
+            <h4>{{ social.name }}</h4>
+            <p>{{ social.handle }}</p>
+            <a v-if="social.link" :href="social.link" target="_blank" rel="noopener noreferrer" class="social-link">
+              Visit Profile
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="section bg-gray-50">
+    <section class="section">
       <div class="container">
         <h2 class="section-title">Frequently Asked Questions</h2>
         <p class="section-subtitle">Find answers to common questions about our products and services.</p>
@@ -47,8 +69,8 @@
         <h2>Ready to Work With Us?</h2>
         <p>Reach out to our sales team for product information, pricing, and custom solutions.</p>
         <div class="cta-buttons">
-          <a href="mailto:info@elantor.com" class="btn-primary" style="background-color: var(--white); color: var(--primary-700);">Send Email</a>
-          <a href="tel:+8612345678901" class="btn-outline">Call Us</a>
+          <a href="mailto:elant_industrial@sina.com" class="btn-primary" style="background-color: var(--white); color: var(--primary-700);">Send Email</a>
+          <a href="https://wa.me/8619540736965" target="_blank" rel="noopener noreferrer" class="btn-outline">WhatsApp Us</a>
         </div>
       </div>
     </section>
@@ -64,23 +86,45 @@ export default {
       contactDetails: [
         { 
           title: 'Email Address', 
-          value: 'info@elantor.com',
-          icon: '✉️' 
+          value: 'elant_industrial@sina.com',
+          icon: '✉️',
+          link: 'mailto:elant_industrial@sina.com'
         },
         { 
-          title: 'Phone Number', 
-          value: '+86 123 4567 8901',
-          icon: '📞' 
+          title: 'WhatsApp', 
+          value: '+86 19540736965',
+          icon: '💬',
+          link: 'https://wa.me/8619540736965'
         },
         { 
           title: 'Our Location', 
-          value: 'No.123 Industrial Zone, Guangzhou, China',
-          icon: '📍' 
+          value: 'Xing Business Building 310, Bulong Road, Bantian Street, Longgang District, Shenzhen, China, 518118',
+          icon: '📍'
         },
         { 
           title: 'Business Hours', 
           value: 'Monday - Friday: 9:00 AM - 6:00 PM (GMT+8)',
-          icon: '⏰' 
+          icon: '⏰'
+        }
+      ],
+      socialMedia: [
+        {
+          name: 'WeChat',
+          handle: 'Elantor',
+          icon: '🔗',
+          link: null
+        },
+        {
+          name: 'Facebook',
+          handle: 'Elantor',
+          icon: '👥',
+          link: 'https://www.facebook.com/Elantor'
+        },
+        {
+          name: 'WhatsApp',
+          handle: '+86 19540736965',
+          icon: '💬',
+          link: 'https://wa.me/8619540736965'
         }
       ],
       faqs: [
@@ -150,6 +194,73 @@ export default {
 .info-card p {
   color: var(--gray-600);
   margin: 0;
+  word-break: break-word;
+}
+
+.info-link a {
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-link a:hover {
+  color: var(--primary-600);
+  text-decoration: underline;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.social-card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.social-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--gray-900);
+}
+
+.social-card p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-block;
+  color: var(--primary-700);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-700);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary-700);
+  color: var(--white);
 }
 
 .faq-container {
@@ -234,6 +345,10 @@ export default {
 
 @media (max-width: 768px) {
   .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-grid {
     grid-template-columns: 1fr;
   }
   

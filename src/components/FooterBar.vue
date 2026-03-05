@@ -5,6 +5,11 @@
         <div class="footer-section">
           <h3 class="footer-title">Elantor</h3>
           <p class="footer-desc">Professional ULV Cold Fogger manufacturer and exporter. Trusted by hospitals, schools, hotels and farms worldwide.</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/Elantor" target="_blank" rel="noopener noreferrer" title="Facebook">👥</a>
+            <a href="https://wa.me/8619540736965" target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
+            <span title="WeChat: Elantor">🔗</span>
+          </div>
         </div>
         
         <div class="footer-section">
@@ -20,7 +25,10 @@
           <h4 class="footer-heading">Contact Info</h4>
           <ul class="footer-links">
             <li v-for="item in contactInfo" :key="item.text">
-              <span>{{ item.icon }} {{ item.text }}</span>
+              <a v-if="item.link" :href="item.link" target="_blank" rel="noopener noreferrer">
+                {{ item.icon }} {{ item.text }}
+              </a>
+              <span v-else>{{ item.icon }} {{ item.text }}</span>
             </li>
           </ul>
         </div>
@@ -45,9 +53,9 @@ export default {
         { name: 'Contact Us', path: '/contact' }
       ],
       contactInfo: [
-        { icon: '📍', text: 'Guangzhou, China' },
-        { icon: '✉️', text: 'info@elantor.com' },
-        { icon: '📞', text: '+86 123 4567 8901' }
+        { icon: '📍', text: 'Xing Business Building 310, Bulong Road, Bantian Street, Longgang District, Shenzhen, China, 518118' },
+        { icon: '✉️', text: 'elant_industrial@sina.com', link: 'mailto:elant_industrial@sina.com' },
+        { icon: '💬', text: '+86 19540736965', link: 'https://wa.me/8619540736965' }
       ]
     }
   }
@@ -83,6 +91,29 @@ export default {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--gray-400);
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-icons a {
+  color: var(--gray-400);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons a:hover {
+  color: var(--primary-500);
+}
+
+.social-icons span {
+  color: var(--gray-400);
+  cursor: help;
 }
 
 .footer-heading {
@@ -105,6 +136,7 @@ export default {
   color: var(--gray-400);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .footer-links a:hover {
@@ -113,6 +145,7 @@ export default {
 
 .footer-links span {
   color: var(--gray-400);
+  word-break: break-word;
 }
 
 .footer-bottom {
