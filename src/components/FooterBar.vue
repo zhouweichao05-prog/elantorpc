@@ -5,6 +5,7 @@
         <div class="footer-section">
           <div class="footer-logo-section">
             <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="footer-logo">
+            <h3 class="footer-brand-name">伊兰托</h3>
           </div>
           <p class="footer-desc">Professional ULV Cold Fogger manufacturer and exporter. Trusted by hospitals, schools, hotels and farms worldwide.</p>
           <div class="social-icons">
@@ -37,7 +38,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 Elantor Co., Ltd. All rights reserved.</p>
+        <p>&copy; 2024 伊兰托 Co., Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -85,6 +86,9 @@ export default {
 
 .footer-logo-section {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-logo {
@@ -92,10 +96,19 @@ export default {
   width: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+  margin-bottom: 0.75rem;
 }
 
 .footer-logo:hover {
   opacity: 1;
+}
+
+.footer-brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-500);
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 .footer-title {

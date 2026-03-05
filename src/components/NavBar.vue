@@ -4,7 +4,7 @@
       <div class="navbar-content">
         <router-link to="/" class="logo">
           <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="logo-img">
-          <span class="logo-text">Elantor</span>
+          <span class="logo-text">伊兰托</span>
         </router-link>
         
         <div class="nav-menu">
@@ -73,7 +73,7 @@ export default {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
@@ -99,10 +99,16 @@ export default {
 .logo-text {
   letter-spacing: 0.05em;
   font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-700);
+}
+
+.navbar .logo-text {
+  color: var(--white);
 }
 
 .navbar.scrolled .logo-text {
-  font-size: 1.1rem;
+  color: var(--primary-700);
 }
 
 .nav-menu {
