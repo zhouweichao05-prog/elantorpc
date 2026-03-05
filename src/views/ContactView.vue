@@ -109,12 +109,6 @@ export default {
       ],
       socialMedia: [
         {
-          name: 'Facebook',
-          handle: 'David Zhou',
-          icon: '👥',
-          link: 'https://www.facebook.com/david.zhou.9659283/'
-        },
-        {
           name: 'WhatsApp',
           handle: '+86 19540736965',
           icon: '💬',
