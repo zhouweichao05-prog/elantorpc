@@ -109,12 +109,6 @@ export default {
       ],
       socialMedia: [
         {
-          name: 'WeChat',
-          handle: 'Elantor',
-          icon: '🔗',
-          link: null
-        },
-        {
           name: 'Facebook',
           handle: 'David Zhou',
           icon: '👥',
