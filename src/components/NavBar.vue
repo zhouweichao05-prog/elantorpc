@@ -54,13 +54,14 @@ export default {
   right: 0;
   z-index: 50;
   background-color: transparent;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   transition: all 0.3s ease;
 }
 
 .navbar.scrolled {
   background-color: var(--white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
 }
 
 .navbar-content {
@@ -85,17 +86,23 @@ export default {
 }
 
 .logo-img {
-  height: 50px;
+  height: 70px;
   width: auto;
-  transition: filter 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .navbar.scrolled .logo-img {
+  height: 60px;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .logo-text {
   letter-spacing: 0.05em;
+  font-size: 1.3rem;
+}
+
+.navbar.scrolled .logo-text {
+  font-size: 1.1rem;
 }
 
 .nav-menu {
@@ -137,7 +144,11 @@ export default {
   }
   
   .logo-img {
-    height: 40px;
+    height: 50px;
+  }
+  
+  .navbar.scrolled .logo-img {
+    height: 45px;
   }
 }
 </style>

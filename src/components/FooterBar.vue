@@ -8,7 +8,7 @@
           </div>
           <p class="footer-desc">Professional ULV Cold Fogger manufacturer and exporter. Trusted by hospitals, schools, hotels and farms worldwide.</p>
           <div class="social-icons">
-            <a href="https://www.facebook.com/Elantor" target="_blank" rel="noopener noreferrer" title="Facebook">👥</a>
+            <a href="https://www.facebook.com/david.zhou.9659283/" target="_blank" rel="noopener noreferrer" title="Facebook">👥</a>
             <a href="https://wa.me/8619540736965" target="_blank" rel="noopener noreferrer" title="WhatsApp">💬</a>
             <span title="WeChat: Elantor">🔗</span>
           </div>
@@ -88,7 +88,7 @@ export default {
 }
 
 .footer-logo {
-  height: 80px;
+  height: 120px;
   width: auto;
   opacity: 0.9;
   transition: opacity 0.3s ease;
@@ -180,7 +180,7 @@ export default {
   }
   
   .footer-logo {
-    height: 60px;
+    height: 90px;
   }
 }
 </style>

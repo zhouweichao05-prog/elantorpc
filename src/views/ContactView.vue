@@ -116,9 +116,9 @@ export default {
         },
         {
           name: 'Facebook',
-          handle: 'Elantor',
+          handle: 'David Zhou',
           icon: '👥',
-          link: 'https://www.facebook.com/Elantor'
+          link: 'https://www.facebook.com/david.zhou.9659283/'
         },
         {
           name: 'WhatsApp',
