@@ -3,7 +3,9 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-section">
-          <h3 class="footer-title">Elantor</h3>
+          <div class="footer-logo-section">
+            <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="footer-logo">
+          </div>
           <p class="footer-desc">Professional ULV Cold Fogger manufacturer and exporter. Trusted by hospitals, schools, hotels and farms worldwide.</p>
           <div class="social-icons">
             <a href="https://www.facebook.com/Elantor" target="_blank" rel="noopener noreferrer" title="Facebook">👥</a>
@@ -79,6 +81,21 @@ export default {
 
 .footer-section {
   padding: 1rem 0;
+}
+
+.footer-logo-section {
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  height: 80px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
 }
 
 .footer-title {
@@ -160,6 +177,10 @@ export default {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .footer-logo {
+    height: 60px;
   }
 }
 </style>

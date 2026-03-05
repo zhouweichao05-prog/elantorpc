@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-content">
         <router-link to="/" class="logo">
-          <span class="logo-icon">⚙️</span>
+          <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="logo-img">
           <span class="logo-text">Elantor</span>
         </router-link>
         
@@ -72,20 +72,26 @@ export default {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .navbar.scrolled .logo {
   color: var(--primary-700);
 }
 
-.logo-icon {
-  font-size: 1.5rem;
+.logo-img {
+  height: 50px;
+  width: auto;
+  transition: filter 0.3s ease;
+}
+
+.navbar.scrolled .logo-img {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .logo-text {
@@ -124,6 +130,14 @@ export default {
   
   .nav-link {
     font-size: 0.9rem;
+  }
+  
+  .logo-text {
+    display: none;
+  }
+  
+  .logo-img {
+    height: 40px;
   }
 }
 </style>
