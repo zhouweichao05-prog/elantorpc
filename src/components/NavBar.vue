@@ -1,18 +1,23 @@
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled }">
-    <div class="container">
-      <div class="navbar-content">
-        <router-link to="/" class="logo">
-          <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="logo-img">
-          <span class="logo-text">伊兰托</span>
+    <div class="navbar-content">
+      <router-link to="/" class="logo-wrapper">
+        <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="logo-img">
+        <span class="logo-text">伊兰托</span>
+      </router-link>
+      
+      <div class="nav-menu">
+        <router-link 
+          v-for="item in menuItems" 
+          :key="item.path" 
+          :to="item.path" 
+          class="nav-link"
+          :class="{ active: isActive(item.path) }"
+        >
+          {{ item.name }}
+          <span class="nav-underline"></span>
         </router-link>
-        
-        <div class="nav-menu">
-          <router-link v-for="item in menuItems" :key="item.path" :to="item.path" class="nav-link">
-            {{ item.name }}
-          </router-link>
-          <router-link to="/contact" class="btn-primary">Get a Quote</router-link>
-        </div>
+        <router-link to="/contact" class="btn-cta">Get a Quote</router-link>
       </div>
     </div>
   </nav>
@@ -24,6 +29,7 @@ export default {
   data() {
     return {
       isScrolled: false,
+      currentRoute: '/',
       menuItems: [
         { name: 'Home', path: '/' },
         { name: 'Product', path: '/product' },
@@ -32,8 +38,14 @@ export default {
       ]
     }
   },
+  watch: {
+    '$route.path'(newPath) {
+      this.currentRoute = newPath
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+    this.currentRoute = this.$route.path
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
@@ -41,6 +53,9 @@ export default {
   methods: {
     handleScroll() {
       this.isScrolled = window.scrollY > 50
+    },
+    isActive(path) {
+      return this.currentRoute === path
     }
   }
 }
@@ -52,63 +67,71 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  background-color: transparent;
-  padding: 1rem 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(45, 122, 62, 0.1);
   transition: all 0.3s ease;
-}
-
-.navbar.scrolled {
-  background-color: var(--white);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 0;
 }
 
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(45, 122, 62, 0.08);
+  padding: 0.5rem 0;
+}
+
 .navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 70px;
 }
 
-.logo {
+.navbar.scrolled .navbar-content {
+  height: 60px;
+}
+
+.logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--white);
+  gap: 0.75rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.navbar.scrolled .logo {
-  color: var(--primary-700);
+.logo-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .logo-img {
-  height: 70px;
+  height: 50px;
   width: auto;
-  transition: all 0.3s ease;
+  transition: height 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
 }
 
 .navbar.scrolled .logo-img {
-  height: 60px;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  height: 40px;
 }
 
 .logo-text {
-  letter-spacing: 0.05em;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-700);
-}
-
-.navbar .logo-text {
-  color: var(--white);
+  color: #2d7a3e;
+  letter-spacing: 0.5px;
+  transition: font-size 0.3s ease;
 }
 
 .navbar.scrolled .logo-text {
-  color: var(--primary-700);
+  font-size: 1.3rem;
 }
 
 .nav-menu {
@@ -118,43 +141,79 @@ export default {
 }
 
 .nav-link {
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  transition: color 0.3s ease;
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
   text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
-.navbar.scrolled .nav-link {
-  color: var(--gray-600);
+.nav-link:hover,
+.nav-link.active {
+  color: #2d7a3e;
 }
 
-.nav-link:hover {
-  color: var(--white);
+.nav-underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #2d7a3e, #4a9d5f);
+  transition: width 0.3s ease;
 }
 
-.navbar.scrolled .nav-link:hover {
-  color: var(--primary-700);
+.nav-link:hover .nav-underline,
+.nav-link.active .nav-underline {
+  width: 100%;
+}
+
+.btn-cta {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #2d7a3e, #4a9d5f);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(45, 122, 62, 0.2);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #1f5a2e, #2d7a3e);
+  box-shadow: 0 6px 20px rgba(45, 122, 62, 0.3);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
+  .navbar-content {
+    padding: 0 1rem;
+  }
+
   .nav-menu {
     gap: 1rem;
   }
-  
+
   .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
-  
+
+  .btn-cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
   .logo-text {
-    display: none;
+    font-size: 1.2rem;
   }
-  
+
   .logo-img {
-    height: 50px;
-  }
-  
-  .navbar.scrolled .logo-img {
-    height: 45px;
+    height: 40px;
   }
 }
 </style>
