@@ -2,7 +2,7 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <img :src="require('@/assets/images/product-working.jpg')" alt="Hero" class="hero-bg">
+      <div class="hero-bg" :style="{ backgroundImage: 'url(' + require('@/assets/images/hero_branding_bg.png') + ')' }"></div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <h1 class="hero-title">ULV Cold Fogger by Elantor</h1>
@@ -120,7 +120,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
   z-index: 0;
 }
 

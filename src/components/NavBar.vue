@@ -3,6 +3,7 @@
   <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-content">
       <router-link to="/" class="logo-wrapper">
+        <img :src="require("@/assets/images/logo_icon.png")" alt="Elantor Logo Icon" class="logo-icon-img">
         <span class="logo-text">Elantor</span>
       </router-link>
       
@@ -68,10 +69,6 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background-image: url('../assets/images/navbar_bg.png');
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: left center;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -105,7 +102,7 @@ export default {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem; /* 调整图标和文字的间距 */
   text-decoration: none;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -113,6 +110,17 @@ export default {
 
 .logo-wrapper:hover {
   transform: scale(1.05);
+}
+
+.logo-icon-img {
+  height: 40px; /* 调整图标大小 */
+  width: auto;
+  transition: height 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
+}
+
+.navbar.scrolled .logo-icon-img {
+  height: 35px; /* 滚动时图标变小 */
 }
 
 .logo-text {
@@ -203,6 +211,10 @@ export default {
 
   .logo-text {
     font-size: 1.2rem;
+  }
+
+  .logo-icon-img {
+    height: 30px;
   }
 }
 </style>
