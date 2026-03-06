@@ -94,7 +94,7 @@ export default {
     const detail1 = require('@/assets/images/detail-1.jpg')
     const detail2 = require('@/assets/images/detail-2.jpg')
     const detail3 = require('@/assets/images/detail-3.jpg')
-    const detail4 = require('@/assets/images/detail-4.jpg')
+    const productSafety = require("@/assets/images/product-safety.png")
     const detail5 = require('@/assets/images/detail-5.jpg')
 
     return {
@@ -126,7 +126,7 @@ export default {
         { src: detail1, title: 'Powerful Motor', desc: '1200W motor ensures consistent performance' },
         { src: detail2, title: 'Centrifugal Atomization', desc: 'Ultra-fine droplet generation' },
         { src: detail3, title: 'Flexible Nozzle', desc: '360° adjustable spray direction' },
-        { src: detail4, title: 'Safety Features', desc: 'Anti-backflow protection system' },
+        { src: productSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' }
         { src: detail5, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
         { src: productWorking, title: 'In Action', desc: 'Real-world application' }
       ]
