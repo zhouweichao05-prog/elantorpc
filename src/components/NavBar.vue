@@ -102,7 +102,7 @@ export default {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem; /* 稍微增加图标和文字的间距 */
   text-decoration: none;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -113,14 +113,14 @@ export default {
 }
 
 .logo-icon-img {
-  height: 40px;
+  height: 70px; /* 显著放大图标 */
   width: auto;
   transition: height 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
 }
 
 .navbar.scrolled .logo-icon-img {
-  height: 35px;
+  height: 60px; /* 滚动时依然保持较大的尺寸 */
 }
 
 .logo-text {
