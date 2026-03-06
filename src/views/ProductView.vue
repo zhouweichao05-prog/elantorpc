@@ -106,14 +106,15 @@ export default {
         { src: detail2, alt: 'Detail 2' }
       ],
       specs: [
-        { label: 'Model', value: 'ELT-ULV-5L' },
-        { label: 'Voltage', value: '110V / 220V AC' },
-        { label: 'Power', value: '1200W' },
-        { label: 'Tank Capacity', value: '5 Liters' },
-        { label: 'Flow Rate', value: '0–3 L/min' },
-        { label: 'Coverage', value: '1000 m² / 10 min' },
-        { label: 'Weight', value: '3.5 kg' },
-        { label: 'Certification', value: 'CE, RoHS' }
+        { label: 'Atomization Volume', value: '0~470 ml/min (Adjustable)' },
+        { label: 'Power', value: '1000 W, AC 110V 50Hz optional' },
+        { label: 'Particle size', value: '5-45 μm (Adjustable)' },
+        { label: 'Tank Capacity', value: '5L' },
+        { label: 'Effective range', value: '6-8m' },
+        { label: 'Rpm', value: '32,000 rpm' },
+        { label: 'Net weight', value: '2.6kg / 5.7 lbs' },
+        { label: 'Gross weight', value: '3.4 kg / 7.49 lbs' },
+        { label: 'Measurement', value: '470*280*240mm' }
       ],
       functions: [
         { icon: '🦠', name: 'Sterilization', desc: 'Kill bacteria & viruses' },
