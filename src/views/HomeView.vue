@@ -97,9 +97,7 @@ export default {
     return {
       currentSlide: 0,
       carouselImages: [
-        'hero_slide_1.png',
-        'hero_slide_2.png',
-        'hero_slide_3.png'
+        'product-working.jpg'
       ],
       features: [
         { title: 'Atomization Volume', desc: '0~470 ml/min (Adjustable)' },
