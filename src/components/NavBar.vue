@@ -1,9 +1,9 @@
+
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-content">
       <router-link to="/" class="logo-wrapper">
-        <img :src="require('@/assets/images/logo.png')" alt="Elantor Logo" class="logo-img">
-        <span class="logo-text">伊兰托</span>
+        <span class="logo-text">Elantor</span>
       </router-link>
       
       <div class="nav-menu">
@@ -68,7 +68,11 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.7);
+  background-image: url('../assets/images/navbar_bg.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(45, 122, 62, 0.1);
@@ -77,7 +81,7 @@ export default {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 4px 20px rgba(45, 122, 62, 0.08);
@@ -111,19 +115,8 @@ export default {
   transform: scale(1.05);
 }
 
-.logo-img {
-  height: 50px;
-  width: auto;
-  transition: height 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
-}
-
-.navbar.scrolled .logo-img {
-  height: 40px;
-}
-
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #2d7a3e;
   letter-spacing: 0.5px;
@@ -131,7 +124,7 @@ export default {
 }
 
 .navbar.scrolled .logo-text {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .nav-menu {
@@ -210,10 +203,6 @@ export default {
 
   .logo-text {
     font-size: 1.2rem;
-  }
-
-  .logo-img {
-    height: 40px;
   }
 }
 </style>
