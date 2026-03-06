@@ -70,6 +70,7 @@
         <p>Reach out to our sales team for product information, pricing, and custom solutions.</p>
         <div class="cta-buttons">
           <a href="mailto:elant_industrial@sina.com" class="btn-primary" style="background-color: var(--white); color: var(--primary-700);">Send Email</a>
+          <a href="tel:+8619540736965" class="btn-outline">Call Us</a>
           <a href="https://wa.me/8619540736965" target="_blank" rel="noopener noreferrer" class="btn-outline">WhatsApp Us</a>
         </div>
       </div>
@@ -93,8 +94,13 @@ export default {
         { 
           title: 'WhatsApp', 
           value: '+86 19540736965',
-          icon: '💬',
-          link: 'https://wa.me/8619540736965'
+          icon: '📞',
+          link: 'tel:+8619540736965'
+        },
+        {
+          title: 'Fax Number',
+          value: '+86-0755-23766051',
+          icon: '📠'
         },
         { 
           title: 'Our Location', 

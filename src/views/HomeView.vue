@@ -2,7 +2,15 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-bg" :style="{ backgroundImage: 'url(' + require('@/assets/images/hero_branding_bg.png') + ')' }"></div>
+      <div class="hero-carousel">
+        <div 
+          v-for="(image, index) in carouselImages" 
+          :key="index" 
+          class="hero-bg"
+          :class="{ active: currentSlide === index }"
+          :style="{ backgroundImage: 'url(' + require('@/assets/images/' + image) + ')' }"
+        ></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <h1 class="hero-title">ULV Cold Fogger by Elantor</h1>
@@ -11,6 +19,14 @@
           <router-link to="/product" class="btn-primary">View Product</router-link>
           <router-link to="/contact" class="btn-outline">Get a Quote</router-link>
         </div>
+      </div>
+      <div class="carousel-indicators">
+        <span 
+          v-for="(image, index) in carouselImages" 
+          :key="index" 
+          :class="{ active: currentSlide === index }"
+          @click="goToSlide(index)"
+        ></span>
       </div>
     </section>
 
@@ -79,12 +95,22 @@ export default {
   name: 'HomeView',
   data() {
     return {
+      currentSlide: 0,
+      carouselImages: [
+        'hero_slide_1.png',
+        'hero_slide_2.png',
+        'hero_slide_3.png'
+      ],
       features: [
-        { title: 'Strong Power & High Efficiency', desc: 'Capable of spraying 1000 square meters in 10 minutes.' },
-        { title: 'Centrifugal Rotating Sprayer', desc: 'No blocking design with adjustable droplet size.' },
-        { title: 'Flexible Hose Nozzle', desc: 'Can swing at will for convenient angle adjustment.' },
-        { title: 'Medicine Liquid Check Device', desc: 'Prevents backflow of liquid in shutdown state.' },
-        { title: 'Meets All Sanitary Standards', desc: 'Suitable for professional disinfection worldwide.' }
+        { title: 'Atomization Volume', desc: '0~470 ml/min (Adjustable)' },
+        { title: 'Power', desc: '1000 W, AC 110V 50Hz optional' },
+        { title: 'Particle size', desc: '5-45 μm (Adjustable)' },
+        { title: 'Tank Capacity', desc: '5L' },
+        { title: 'Effective range', desc: '6-8m' },
+        { title: 'Rpm', desc: '32,000 rpm' },
+        { title: 'Net weight', desc: '2.6kg / 5.7 lbs' },
+        { title: 'Gross weight', desc: '3.4 kg / 7.49 lbs' },
+        { title: 'Measurement', desc: '470*280*240mm' }
       ],
       scenarios: [
         { title: 'Hospital', desc: 'Medical disinfection', image: require('@/assets/images/scenarios/hospital.jpg') },
@@ -100,6 +126,24 @@ export default {
         { icon: '🎨', title: 'Custom OEM/ODM', desc: 'Customization options for branding and specifications.' }
       ]
     }
+  },
+  mounted() {
+    this.startCarousel();
+  },
+  beforeUnmount() {
+    clearInterval(this.carouselInterval);
+  },
+  methods: {
+    startCarousel() {
+      this.carouselInterval = setInterval(() => {
+        this.currentSlide = (this.currentSlide + 1) % this.carouselImages.length;
+      }, 5000); // Change image every 5 seconds
+    },
+    goToSlide(index) {
+      this.currentSlide = index;
+      clearInterval(this.carouselInterval);
+      this.startCarousel();
+    }
   }
 }
 </script>
@@ -114,6 +158,14 @@ export default {
   margin-top: 80px;
 }
 
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -123,6 +175,12 @@ export default {
   background-size: cover;
   background-position: center;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.active {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -159,6 +217,30 @@ export default {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicators span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators span.active {
+  background-color: var(--primary-500);
 }
 
 .feature-number {
