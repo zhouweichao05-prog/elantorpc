@@ -95,7 +95,7 @@ export default {
     const detail2 = require('@/assets/images/detail-2.jpg')
     const detail3 = require('@/assets/images/detail-3.jpg')
     const productSafety = require("@/assets/images/product-safety.png")
-    const detail5 = require('@/assets/images/detail-5.jpg')
+    const detail5Cropped = require("@/assets/images/detail-5-cropped.jpg")
 
     return {
       selectedImage: productMain,
@@ -127,7 +127,7 @@ export default {
         { src: detail2, title: 'Centrifugal Atomization', desc: 'Ultra-fine droplet generation' },
         { src: detail3, title: 'Flexible Nozzle', desc: '360° adjustable spray direction' },
         { src: productSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' },
-        { src: detail5, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
+        { src: detail5Cropped, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
         { src: productWorking, title: 'In Action', desc: 'Real-world application' }
       ]
     }
