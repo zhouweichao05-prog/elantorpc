@@ -92,11 +92,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 90px; /* 增加导航栏高度以容纳更大的 Logo 和文字 */
 }
 
 .navbar.scrolled .navbar-content {
-  height: 60px;
+  height: 75px;
 }
 
 .logo-wrapper {
@@ -124,15 +124,18 @@ export default {
 }
 
 .logo-text {
-  font-size: 1.8rem;
+  font-size: 3.2rem; /* 大幅增加字号以匹配 70px 的图标高度 */
   font-weight: 700;
   color: #2d7a3e;
-  letter-spacing: 0.5px;
+  letter-spacing: -1px; /* 紧凑一点更有品牌感 */
   transition: font-size 0.3s ease;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .navbar.scrolled .logo-text {
-  font-size: 1.6rem;
+  font-size: 2.8rem; /* 滚动时同步缩放 */
 }
 
 .nav-menu {
