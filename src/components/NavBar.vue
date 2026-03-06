@@ -3,7 +3,7 @@
   <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-content">
       <router-link to="/" class="logo-wrapper">
-        <img :src="require("@/assets/images/logo_icon.png")" alt="Elantor Logo Icon" class="logo-icon-img">
+        <img :src="require('@/assets/images/logo_icon.png')" alt="Elantor Logo Icon" class="logo-icon-img">
         <span class="logo-text">Elantor</span>
       </router-link>
       
@@ -102,7 +102,7 @@ export default {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* 调整图标和文字的间距 */
+  gap: 0.5rem;
   text-decoration: none;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -113,14 +113,14 @@ export default {
 }
 
 .logo-icon-img {
-  height: 40px; /* 调整图标大小 */
+  height: 40px;
   width: auto;
   transition: height 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
 }
 
 .navbar.scrolled .logo-icon-img {
-  height: 35px; /* 滚动时图标变小 */
+  height: 35px;
 }
 
 .logo-text {
