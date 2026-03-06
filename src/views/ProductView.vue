@@ -126,7 +126,7 @@ export default {
         { src: detail1, title: 'Powerful Motor', desc: '1200W motor ensures consistent performance' },
         { src: detail2, title: 'Centrifugal Atomization', desc: 'Ultra-fine droplet generation' },
         { src: detail3, title: 'Flexible Nozzle', desc: '360° adjustable spray direction' },
-        { src: productSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' }
+        { src: productSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' },
         { src: detail5, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
         { src: productWorking, title: 'In Action', desc: 'Real-world application' }
       ]
