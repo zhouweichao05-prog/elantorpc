@@ -58,7 +58,8 @@ export default {
       contactInfo: [
         { icon: '📍', text: 'Xing Business Building 310, Bulong Road, Bantian Street, Longgang District, Shenzhen, China, 518118' },
         { icon: '✉️', text: 'elant_industrial@sina.com', link: 'mailto:elant_industrial@sina.com' },
-        { icon: '💬', text: '+86 19540736965', link: 'https://wa.me/8619540736965' }
+        { icon: '💬', text: '+86 19540736965', link: 'https://wa.me/8619540736965' },
+        { icon: '📠', text: '+86-0755-23766051' } // Add Fax number
       ]
     }
   }
