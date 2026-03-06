@@ -115,12 +115,14 @@ export default {
 .logo-icon-img {
   height: 70px; /* 显著放大图标 */
   width: auto;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
+  margin-top: -10px; /* 向上微调，抵消图标自带的底部留白，使其与文字中心线对齐 */
 }
 
 .navbar.scrolled .logo-icon-img {
   height: 60px; /* 滚动时依然保持较大的尺寸 */
+  margin-top: -8px; /* 滚动时同步微调 */
 }
 
 .logo-text {
