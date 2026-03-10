@@ -137,6 +137,11 @@ export default {
     const tsf35dSide = require('@/assets/images/products/tsf-35d/tsf-35d-side.jpg');
     const tsf35dNozzle = require('@/assets/images/products/tsf-35d/tsf-35d-nozzle.jpg');
     const tsf35dDetail = require('@/assets/images/products/tsf-35d/tsf-35d-detail.jpg');
+    const mf100Main = require('@/assets/images/mf100/mf100-main.jpg');
+    const mf100Detail1 = require('@/assets/images/mf100/mf100-detail1.jpg');
+    const mf100Detail2 = require('@/assets/images/mf100/mf100-detail2.jpg');
+    const mf100Application = require('@/assets/images/mf100/mf100-application.png');
+    const mf100Package = require('@/assets/images/mf100/mf100-package.jpg');
 
     // Product catalog
     const allProducts = [
@@ -229,6 +234,58 @@ export default {
           'Versatility: Can be used for a wide range of applications, from agriculture to public health.'
         ],
         video: '/videos/tsf-35d-intro.mp4'
+      },
+      {
+        id: 'mf100',
+        name: 'Mini Mist Fogger MF-100',
+        model: 'MF-100',
+        category: 'mist',
+        image: mf100Main,
+        description: 'Portable mini mist fogger for small-scale pest control and disinfection',
+        images: [
+          { type: 'image', src: mf100Main },
+          { type: 'image', src: mf100Detail1 },
+          { type: 'image', src: mf100Detail2 },
+          { type: 'image', src: mf100Application },
+          { type: 'image', src: mf100Package }
+        ],
+        specs: [
+          { label: 'Model', value: 'MF-100' },
+          { label: 'Type', value: 'Mini Mist Fogger' },
+          { label: 'Fuel', value: 'Liquid Propane Gas' },
+          { label: 'Consumption', value: '1EA/30Min' },
+          { label: 'Fuel Tank - Fog', value: 'diesel' },
+          { label: 'Fuel Tank - Mist', value: 'water' },
+          { label: 'Fuel Tank - Semi Fog', value: 'water' },
+          { label: 'Chemicals Tank - Fog', value: 'diesel+water' },
+          { label: 'Chemicals Tank - Mist', value: 'water+chemicals' },
+          { label: 'Chemicals Tank - Semi Fog', value: 'diesel+chemicals' },
+          { label: 'Weight (empty)', value: '2kg' },
+          { label: 'Weight (max)', value: '4kg' },
+          { label: 'Dimension', value: '600x175x420mm' }
+        ],
+        features: [
+          'Mini Mist Fogger MF-100 - Compact, Efficient, and Versatile',
+          'The Mini Mist Fogger MF-100 is designed for portable pest control and disinfection applications. This lightweight and easy-to-operate fogger is ideal for small-scale commercial use, agricultural applications, and household pest management.',
+          'Key Features:',
+          'Portable Design: Weighing only 2-4kg, the MF-100 is highly portable and easy to carry to different locations.',
+          'Liquid Propane Gas Powered: Utilizes liquid propane gas for efficient fuel consumption of just 1EA per 30 minutes.',
+          'Multi-Purpose Fogging: Supports three fogging modes - fog, mist, and semi-fog - for flexible application options.',
+          'Dual Tank System: Separate fuel and chemical tanks for precise control over fog composition.',
+          'Quick Start-up: Easy ignition and minimal setup time for rapid deployment.',
+          'Compact Dimensions: 600x175x420mm size makes it easy to store and transport.',
+          'Applications:',
+          'Ideal for small-scale pest control in residential and commercial settings',
+          'Agricultural crop protection and disease prevention',
+          'Quick disinfection of small areas and equipment',
+          'Mosquito and insect control in gardens and outdoor spaces',
+          'Why Choose MF-100?',
+          'Affordability: Cost-effective solution for small-scale fogging needs',
+          'Ease of Use: Simple operation suitable for non-professional users',
+          'Portability: Lightweight design for convenient transportation',
+          'Versatility: Multiple fogging modes for different applications'
+        ],
+        video: null
       }
     ];
 
@@ -254,7 +311,8 @@ export default {
       const labels = {
         all: 'All Products',
         ulv: 'ULV Cold Fogger',
-        thermal: 'Thermal Fogger'
+        thermal: 'Thermal Fogger',
+        mist: 'Mini Mist Fogger'
       };
       
       this.currentCategoryLabel = labels[category] || 'All Products';
