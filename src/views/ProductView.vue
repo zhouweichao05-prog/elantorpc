@@ -10,11 +10,11 @@
       <!-- Left Sidebar - Categories -->
       <aside class="sidebar">
         <div class="category-section">
-          <h3 class="category-title">ULV Cold Fogger</h3>
+          <h3 class="category-title">Fogger</h3>
           <ul class="category-list">
-            <li><a href="#" @click.prevent="filterByCategory('battery')" :class="{ active: activeCategory === 'battery' }">Battery-Powered ULV Cold Fogger</a></li>
-            <li><a href="#" @click.prevent="filterByCategory('electric')" :class="{ active: activeCategory === 'electric' }">Electric ULV Cold Fogger</a></li>
-            <li><a href="#" @click.prevent="filterByCategory('truck')" :class="{ active: activeCategory === 'truck' }">Truck-Mounted ULV Cold Fogger</a></li>
+            <li><a href="#" @click.prevent="activeCategory = 'all'" :class="{ active: activeCategory === 'all' }">All Products</a></li>
+            <li><a href="#" @click.prevent="activeCategory = 'ulv'" :class="{ active: activeCategory === 'ulv' }">ULV Cold Fogger</a></li>
+            <li><a href="#" @click.prevent="activeCategory = 'thermal'" :class="{ active: activeCategory === 'thermal' }">Thermal Fogger</a></li>
           </ul>
         </div>
       </aside>
@@ -40,14 +40,14 @@
 
         <!-- Product Grid -->
         <div class="products-grid">
-          <div v-for="product in filteredProducts" :key="product.id" class="product-card">
-            <router-link :to="`/product-detail/${product.id}`" class="product-card-link">
+          <div v-for="product in filteredProducts" :key="product.id" class="product-card" @click="goToProductDetail(product.id)">
+            <div class="product-card-content">
               <div class="product-image-wrapper">
                 <img :src="product.image" :alt="product.name" class="product-image">
               </div>
               <h4 class="product-name">{{ product.name }}</h4>
               <p class="product-model" v-if="product.model">{{ product.model }}</p>
-            </router-link>
+            </div>
           </div>
         </div>
 
@@ -72,99 +72,33 @@ export default {
     // Asset imports
     const ulvProductMain = require('@/assets/images/product-main.jpg');
     const ulvProductWorking = require('@/assets/images/product-working.jpg');
-    const ulvDetail1 = require('@/assets/images/detail-1.jpg');
-    const ulvDetail2 = require('@/assets/images/detail-2.jpg');
-    const ulvDetail3 = require('@/assets/images/detail-3.jpg');
-    const ulvProductSafety = require("@/assets/images/product-safety.png");
-    const ulvDetail5Cropped = require("@/assets/images/detail-5-cropped.jpg");
-
-    const tsf35dNozzle = require('@/assets/images/products/tsf-35d/tsf-35d-nozzle.jpg');
-    const tsf35dSide = require('@/assets/images/products/tsf-35d/tsf-35d-side.jpg');
-    const tsf35dAccessories = require('@/assets/images/products/tsf-35d/tsf-35d-accessories.jpg');
     const tsf35dFull = require('@/assets/images/products/tsf-35d/tsf-35d-full.jpg');
-    const tsf35dDetail = require('@/assets/images/products/tsf-35d/tsf-35d-detail.jpg');
 
-    // Product catalog
+    // Product catalog - Only 2 main products
     const allProducts = [
       {
-        id: 'ulv-portable-220d',
-        name: 'Portable cordless ULV cold fogger 220D',
-        model: '220D',
-        category: 'battery',
-        image: ulvProductMain,
-        description: 'Battery-powered portable ULV cold fogger'
-      },
-      {
-        id: 'ulv-breeze-100',
-        name: 'ULV Cold Fogger Breeze 100 Model',
-        model: 'Breeze 100',
-        category: 'battery',
-        image: ulvProductWorking,
-        description: 'Lightweight battery-powered fogger'
-      },
-      {
-        id: 'ulv-portable-q100',
-        name: 'Portable Type ULV Cold Fogger Q-100',
-        model: 'Q-100',
-        category: 'battery',
-        image: ulvDetail1,
-        description: 'Compact portable ULV fogger'
-      },
-      {
-        id: 'ulv-electric-elt5l',
+        id: 'ulv',
         name: 'Electric ULV Cold Fogger',
         model: 'ELT-ULV-5L',
-        category: 'electric',
-        image: ulvDetail2,
-        description: 'Professional electric ULV cold fogger'
+        category: 'ulv',
+        image: ulvProductMain,
+        description: 'Professional electric ULV cold fogger for rapid disinfection'
       },
       {
-        id: 'ulv-electric-3wc40bf',
-        name: 'Electric ULV Cold Fogger 3WC-40BF',
-        model: '3WC-40BF',
-        category: 'electric',
-        image: ulvDetail3,
-        description: 'Industrial-grade electric fogger'
-      },
-      {
-        id: 'ulv-electric-3wz40hb',
-        name: 'Electric ULV Cold Fogger 3WZ-40HB',
-        model: '3WZ-40HB',
-        category: 'electric',
-        image: ulvProductSafety,
-        description: 'High-performance electric fogger'
-      },
-      {
-        id: 'ulv-truck-mounted',
-        name: 'Truck-Mounted ULV Cold Fogger',
-        model: 'TM-Series',
-        category: 'truck',
-        image: ulvDetail5Cropped,
-        description: 'Vehicle-mounted disinfection system'
-      },
-      {
-        id: 'tsf35d-thermal',
+        id: 'tsf35d',
         name: 'TSF-35D Thermal Fogger',
         model: 'TSF-35D',
         category: 'thermal',
         image: tsf35dFull,
-        description: 'High-efficiency thermal fogger'
-      },
-      {
-        id: 'tsf35d-side',
-        name: 'TSF-35D Thermal Fogger (Side View)',
-        model: 'TSF-35D',
-        category: 'thermal',
-        image: tsf35dSide,
-        description: 'Thermal fogging solution'
+        description: 'High-efficiency thermal fogger for pest control and disinfection'
       }
     ];
 
     return {
       allProducts,
       filteredProducts: allProducts,
-      activeCategory: 'electric', // Default to electric
-      currentCategoryLabel: 'Electric ULV Cold Fogger',
+      activeCategory: 'all',
+      currentCategoryLabel: 'All Products',
       searchQuery: '',
       showTopBtn: false
     };
@@ -175,9 +109,8 @@ export default {
       this.searchQuery = '';
       
       const labels = {
-        battery: 'Battery-Powered ULV Cold Fogger',
-        electric: 'Electric ULV Cold Fogger',
-        truck: 'Truck-Mounted ULV Cold Fogger',
+        all: 'All Products',
+        ulv: 'ULV Cold Fogger',
         thermal: 'Thermal Fogger'
       };
       
@@ -205,6 +138,14 @@ export default {
       );
     },
     
+    goToProductDetail(productId) {
+      // Navigate to product detail page
+      this.$router.push({
+        name: 'ProductDetail',
+        params: { id: productId }
+      });
+    },
+    
     scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     },
@@ -213,10 +154,15 @@ export default {
       this.showTopBtn = window.scrollY > 300;
     }
   },
+  watch: {
+    activeCategory(newVal) {
+      this.filterByCategory(newVal);
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    // Initialize with electric category
-    this.filterByCategory('electric');
+    // Initialize with all products
+    this.filterByCategory('all');
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -390,6 +336,7 @@ export default {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -397,10 +344,10 @@ export default {
   transform: translateY(-5px);
 }
 
-.product-card-link {
+.product-card-content {
+  display: block;
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
 .product-image-wrapper {
