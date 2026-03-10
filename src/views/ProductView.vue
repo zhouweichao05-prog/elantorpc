@@ -1,10 +1,20 @@
 <template>
   <main>
+    <!-- Product Catalog Navigation -->
+    <section class="section bg-gray-100" style="margin-top: 80px;">
+      <div class="container">
+        <div class="product-catalog-nav">
+          <button :class="{ active: currentProduct.id === 'ulv' }" @click="switchProduct('ulv')">ULV Cold Fogger</button>
+          <button :class="{ active: currentProduct.id === 'tsf35d' }" @click="switchProduct('tsf35d')">TSF-35D Thermal Fogger</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Product Hero -->
-    <section class="section bg-primary-700 text-white" style="margin-top: 80px;">
+    <section class="section bg-primary-700 text-white">
       <div class="container text-center">
-        <h1>ULV Cold Fogger</h1>
-        <p class="section-subtitle text-white">Professional Electric ULV Cold Fogger — Spraying 1000㎡ in Just 10 Minutes</p>
+        <h1>{{ currentProduct.heroTitle }}</h1>
+        <p class="section-subtitle text-white">{{ currentProduct.heroSubtitle }}</p>
       </div>
     </section>
 
@@ -13,11 +23,14 @@
       <div class="container">
         <div class="product-grid">
           <div class="product-images">
-            <img :src="selectedImage" :alt="'Product'" class="main-image">
+            <img :src="selectedImage" :alt="currentProduct.name" class="main-image">
             <div class="thumbnail-grid">
-              <button v-for="(img, idx) in productImages" :key="idx" @click="selectedImage = img.src" class="thumbnail" :class="{ active: selectedImage === img.src }">
+              <button v-for="(img, idx) in currentProduct.images" :key="idx" @click="selectedImage = img.src" class="thumbnail" :class="{ active: selectedImage === img.src }">
                 <img :src="img.src" :alt="img.alt">
               </button>
+            </div>
+            <div v-if="currentProduct.video" class="product-video">
+              <video controls :src="currentProduct.video" class="w-full rounded-lg"></video>
             </div>
           </div>
           
@@ -28,11 +41,11 @@
               <span class="badge">Best Seller</span>
             </div>
             
-            <h2>Electric ULV Cold Fogger</h2>
-            <p class="model">Model: ELT-ULV-5L</p>
+            <h2>{{ currentProduct.name }}</h2>
+            <p class="model">Model: {{ currentProduct.model }}</p>
             
             <div class="specs-table">
-              <div v-for="spec in specs" :key="spec.label" class="spec-row">
+              <div v-for="spec in currentProduct.specs" :key="spec.label" class="spec-row">
                 <span class="spec-label">{{ spec.label }}</span>
                 <span class="spec-value">{{ spec.value }}</span>
               </div>
@@ -41,7 +54,7 @@
             <div class="functions">
               <h4>Functions</h4>
               <div class="function-grid">
-                <div v-for="func in functions" :key="func.name" class="function-item">
+                <div v-for="func in currentProduct.functions" :key="func.name" class="function-item">
                   <span class="func-icon">{{ func.icon }}</span>
                   <div>
                     <div class="func-name">{{ func.name }}</div>
@@ -65,7 +78,7 @@
       <div class="container">
         <h2 class="section-title">Product Details</h2>
         <div class="grid grid-2">
-          <div v-for="(img, idx) in detailImages" :key="idx" class="detail-card">
+          <div v-for="(img, idx) in currentProduct.detailImages" :key="idx" class="detail-card">
             <img :src="img.src" :alt="img.title" class="detail-img">
             <h4>{{ img.title }}</h4>
             <p>{{ img.desc }}</p>
@@ -77,7 +90,7 @@
     <!-- CTA -->
     <section class="section bg-primary-700 text-white text-center">
       <div class="container">
-        <h2>Interested in Our ULV Cold Fogger?</h2>
+        <h2>Interested in Our {{ currentProduct.name }}?</h2>
         <p>Get competitive pricing and detailed product information today.</p>
         <router-link to="/contact" class="btn-primary" style="background-color: var(--white); color: var(--primary-700);">Request a Quote Now</router-link>
       </div>
@@ -89,21 +102,32 @@
 export default {
   name: 'ProductView',
   data() {
-    const productMain = require('@/assets/images/product-main.jpg')
-    const productWorking = require('@/assets/images/product-working.jpg')
-    const detail1 = require('@/assets/images/detail-1.jpg')
-    const detail2 = require('@/assets/images/detail-2.jpg')
-    const detail3 = require('@/assets/images/detail-3.jpg')
-    const productSafety = require("@/assets/images/product-safety.png")
-    const detail5Cropped = require("@/assets/images/detail-5-cropped.jpg")
+    const ulvProductMain = require('@/assets/images/product-main.jpg');
+    const ulvProductWorking = require('@/assets/images/product-working.jpg');
+    const ulvDetail1 = require('@/assets/images/detail-1.jpg');
+    const ulvDetail2 = require('@/assets/images/detail-2.jpg');
+    const ulvDetail3 = require('@/assets/images/detail-3.jpg');
+    const ulvProductSafety = require("@/assets/images/product-safety.png");
+    const ulvDetail5Cropped = require("@/assets/images/detail-5-cropped.jpg");
 
-    return {
-      selectedImage: productMain,
-      productImages: [
-        { src: productMain, alt: 'Main' },
-        { src: productWorking, alt: 'Working' },
-        { src: detail1, alt: 'Detail 1' },
-        { src: detail2, alt: 'Detail 2' }
+    const tsf35dNozzle = require('@/assets/images/products/tsf-35d/tsf-35d-nozzle.jpg');
+    const tsf35dSide = require('@/assets/images/products/tsf-35d/tsf-35d-side.jpg');
+    const tsf35dAccessories = require('@/assets/images/products/tsf-35d/tsf-35d-accessories.jpg');
+    const tsf35dFull = require('@/assets/images/products/tsf-35d/tsf-35d-full.jpg');
+    const tsf35dDetail = require('@/assets/images/products/tsf-35d/tsf-35d-detail.jpg');
+    const tsf35dVideo = '/videos/tsf-35d-demo.mp4'; // Public folder video
+
+    const ulvColdFogger = {
+      id: 'ulv',
+      name: 'Electric ULV Cold Fogger',
+      model: 'ELT-ULV-5L',
+      heroTitle: 'ULV Cold Fogger',
+      heroSubtitle: 'Professional Electric ULV Cold Fogger — Spraying 1000㎡ in Just 10 Minutes',
+      images: [
+        { src: ulvProductMain, alt: 'Main' },
+        { src: ulvProductWorking, alt: 'Working' },
+        { src: ulvDetail1, alt: 'Detail 1' },
+        { src: ulvDetail2, alt: 'Detail 2' }
       ],
       specs: [
         { label: 'Atomization Volume', value: '0~470 ml/min (Adjustable)' },
@@ -123,19 +147,110 @@ export default {
         { icon: '🌫️', name: 'Disinfection', desc: 'Full-area sanitization' }
       ],
       detailImages: [
-        { src: detail1, title: 'Powerful Motor', desc: '1200W motor ensures consistent performance' },
-        { src: detail2, title: 'Centrifugal Atomization', desc: 'Ultra-fine droplet generation' },
-        { src: detail3, title: 'Flexible Nozzle', desc: '360° adjustable spray direction' },
-        { src: productSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' },
-        { src: detail5Cropped, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
-        { src: productWorking, title: 'In Action', desc: 'Real-world application' }
-      ]
+        { src: ulvDetail1, title: 'Powerful Motor', desc: '1200W motor ensures consistent performance' },
+        { src: ulvDetail2, title: 'Centrifugal Atomization', desc: 'Ultra-fine droplet generation' },
+        { src: ulvDetail3, title: 'Flexible Nozzle', desc: '360° adjustable spray direction' },
+        { src: ulvProductSafety, title: 'Safety Features', desc: 'Anti-backflow protection system' },
+        { src: ulvDetail5Cropped, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
+        { src: ulvProductWorking, title: 'In Action', desc: 'Real-world application' }
+      ],
+      video: null
+    };
+
+    const tsf35dThermalFogger = {
+      id: 'tsf35d',
+      name: 'TSF-35D Thermal Fogger',
+      model: 'TSF-35D',
+      heroTitle: 'TSF-35D Thermal Fogger',
+      heroSubtitle: 'High-Efficiency Thermal Fogger for Disinfection & Pest Control',
+      images: [
+        { src: tsf35dFull, alt: 'TSF-35D Full View' },
+        { src: tsf35dSide, alt: 'TSF-35D Side View' },
+        { src: tsf35dNozzle, alt: 'TSF-35D Nozzle Detail' },
+        { src: tsf35dDetail, alt: 'TSF-35D Engine Detail' },
+        { src: tsf35dAccessories, alt: 'TSF-35D Accessories' }
+      ],
+      specs: [
+        { label: 'Power Supply', value: 'AC220V or 110V' },
+        { label: 'Power', value: '1000W' },
+        { label: 'Tank Capacity', value: '5L' },
+        { label: 'Sprayer Volume', value: '470ml/min (adjustable)' },
+        { label: 'Droplet Size', value: '5-150 μm' },
+        { label: 'Effective Range', value: '6-8m' },
+        { label: 'Net Weight', value: '2.6kg' },
+        { label: 'Gross Weight', value: '3.2kg' },
+        { label: 'Measurement(mm)', value: '480*280*260' }
+      ],
+      functions: [
+        { icon: '🔥', name: 'Thermal Fogging', desc: 'High-density fog for wide coverage' },
+        { icon: '🦟', name: 'Pest Control', desc: 'Effective against insects and mosquitoes' },
+        { icon: '🛡️', name: 'Disinfection', desc: 'Deep penetration for sanitization' },
+        { icon: '💨', name: 'Quick Action', desc: 'Rapid deployment and treatment' }
+      ],
+      detailImages: [
+        { src: tsf35dFull, title: 'Robust Design', desc: 'Durable stainless steel construction' },
+        { src: tsf35dNozzle, title: 'Precision Nozzle', desc: 'Optimized for fine fog generation' },
+        { src: tsf35dDetail, title: 'Powerful Engine', desc: 'Reliable performance for demanding tasks' },
+        { src: tsf35dAccessories, title: 'Complete Kit', desc: 'Includes all necessary tools and manual' }
+      ],
+      video: tsf35dVideo
+    };
+
+    return {
+      products: {
+        ulv: ulvColdFogger,
+        tsf35d: tsf35dThermalFogger
+      },
+      currentProduct: ulvColdFogger, // Default to ULV Cold Fogger
+      selectedImage: ulvColdFogger.images[0].src
+    };
+  },
+  methods: {
+    switchProduct(productId) {
+      this.currentProduct = this.products[productId];
+      this.selectedImage = this.currentProduct.images[0].src;
+    }
+  },
+  created() {
+    // Check if a product ID is provided in the route, e.g., /product?id=tsf35d
+    const productId = this.$route.query.id;
+    if (productId && this.products[productId]) {
+      this.switchProduct(productId);
     }
   }
-}
+};
 </script>
 
 <style scoped>
+.product-catalog-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.product-catalog-nav button {
+  background-color: var(--gray-200);
+  color: var(--gray-800);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.product-catalog-nav button:hover {
+  background-color: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.product-catalog-nav button.active {
+  background-color: var(--primary-700);
+  color: var(--white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -182,6 +297,10 @@ export default {
 
 .thumbnail.active {
   border-color: var(--primary-700);
+}
+
+.product-video {
+  margin-top: 1rem;
 }
 
 .badges {
