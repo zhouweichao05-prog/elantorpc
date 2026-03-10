@@ -106,14 +106,6 @@
             </p>
           </div>
 
-          <!-- Video Section -->
-          <div v-if="selectedProduct.video" class="detail-video">
-            <h3>Product Introduction Video</h3>
-            <div class="video-container">
-              <video :src="selectedProduct.video" controls class="product-video"></video>
-            </div>
-          </div>
-
           <!-- Back to List Button -->
           <div class="detail-footer">
             <button @click="showProductList()" class="btn-back-list">← Back to Products</button>
@@ -710,36 +702,6 @@ export default {
 
 .feature-text:last-child {
   margin-bottom: 0;
-}
-
-/* Video Section */
-.detail-video {
-  margin: 3rem 0;
-  padding: 2rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-}
-
-.detail-video h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0 0 1.5rem 0;
-}
-
-.video-container {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #000;
-}
-
-.product-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
 }
 
 /* Detail Footer */
