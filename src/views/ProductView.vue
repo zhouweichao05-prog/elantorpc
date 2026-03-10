@@ -266,11 +266,11 @@ export default {
 
 .main-image {
   width: 100%;
-  height: 400px;
+  height: 500px; /* 增加高度以完整显示图片内容 */
   object-fit: contain; /* 确保图片完整显示，不被裁剪 */
   border-radius: 1rem;
   margin-bottom: 1rem;
-  background-color: #f5f5f5; /* 浅灰色背景，确保图片周围显示清晰 */
+  background-color: #ffffff; /* 白色背景，与图片自带背景融合 */
 }
 
 .thumbnail-grid {
