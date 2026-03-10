@@ -102,6 +102,14 @@
             </p>
           </div>
 
+          <!-- Video Section -->
+          <div v-if="selectedProduct.video" class="detail-video">
+            <h3>Product Introduction Video</h3>
+            <div class="video-container">
+              <video :src="selectedProduct.video" controls class="product-video"></video>
+            </div>
+          </div>
+
           <!-- Back to List Button -->
           <div class="detail-footer">
             <button @click="showProductList()" class="btn-back-list">← Back to Products</button>
@@ -166,7 +174,8 @@ export default {
           'ULV Cold fogger Dragon is mounted on wheels, convenient moving while spraying, save labor.',
           'Mobile handrail can set any spraying direction for the nozzle, take out nozzle handle, also convenient spraying to every direction.',
           'Spray gun incorporates an adjustment knob for continuous flow rate and fog droplet size adjustment.'
-        ]
+        ],
+        video: '/videos/ulv-cold-fogger-intro.mp4'
       },
       {
         id: 'tsf35d',
@@ -199,7 +208,8 @@ export default {
           'Efficient Fuel Consumption - Optimized combustion engine consumes only 1.8-2.2L/H, providing extended operation time.',
           'Flexible Flow Rate Control - Adjustable flow rate from 8-42L/H with oil, allowing precise application for different scenarios.',
           'Portable Battery-Powered - Operates on 4x1.5V DC batteries, providing cordless mobility and convenience.'
-        ]
+        ],
+        video: '/videos/tsf-35d-intro.mp4'
       }
     ];
 
@@ -665,6 +675,36 @@ export default {
 
 .feature-text:last-child {
   margin-bottom: 0;
+}
+
+/* Video Section */
+.detail-video {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.detail-video h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.product-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 /* Detail Footer */
