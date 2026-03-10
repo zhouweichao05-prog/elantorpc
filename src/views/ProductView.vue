@@ -405,8 +405,9 @@ export default {
 
 .detail-img {
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 250px; /* 可以根据需要调整高度 */
+  object-fit: contain; /* 确保图片完整显示 */
+  background-color: #f0f0f0; /* 添加背景色，防止 contain 模式下出现透明区域 */
 }
 
 .detail-card h4 {
