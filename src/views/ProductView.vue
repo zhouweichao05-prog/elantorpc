@@ -151,20 +151,21 @@ export default {
         ],
         specs: [
           { label: 'Atomization Volume', value: '0~470 ml/min (Adjustable)' },
-          { label: 'Power', value: '1000 W, AC 110V 50Hz optional' },
-          { label: 'Particle size', value: '5-45 μm (Adjustable)' },
+          { label: 'Power', value: '1000w' },
+          { label: 'Motor', value: '220v/110v' },
+          { label: 'Effective Range', value: '8m' },
+          { label: 'Particle Size', value: '10-150μm (adjustable)' },
           { label: 'Tank Capacity', value: '5L' },
-          { label: 'Effective range', value: '6-8m' },
-          { label: 'Rpm', value: '32,000 rpm' },
-          { label: 'Net weight', value: '2.6kg / 5.7 lbs' },
-          { label: 'Gross weight', value: '3.4 kg / 7.49 lbs' },
-          { label: 'Measurement', value: '470*280*240mm' }
+          { label: 'Net weight', value: '2.35KGS' },
+          { label: 'Gross weight', value: '3.45KGS' },
+          { label: 'Measurement', value: '560 mm×240 mm×320 mm' },
+          { label: 'Volume', value: '0.048/per carton' },
+          { label: 'Big Carton Size', value: '59x52x71cm (4 in 1)' }
         ],
         features: [
-          'High-Performance 1200W Motor - Equipped with a robust industrial-grade motor, providing consistent power for long-duration operation and superior atomization efficiency.',
-          'Advanced Centrifugal Atomization - Our proprietary nozzle design ensures ultra-fine droplet generation, allowing for deep penetration into hard-to-reach areas.',
-          '360° Flexible Spray Nozzle - The reinforced flexible hose and adjustable nozzle allow operators to direct the fog with precision, covering every corner effortlessly.',
-          'Integrated Safety Features - Designed with an anti-backflow protection system to prevent chemical leakage and ensure operator safety during and after use.'
+          'ULV Cold fogger Dragon is mounted on wheels, convenient moving while spraying, save labor.',
+          'Mobile handrail can set any spraying direction for the nozzle, take out nozzle handle, also convenient spraying to every direction.',
+          'Spray gun incorporates an adjustment knob for continuous flow rate and fog droplet size adjustment.'
         ]
       },
       {
