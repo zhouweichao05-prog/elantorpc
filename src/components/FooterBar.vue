@@ -190,13 +190,88 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+    margin-top: 3rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
   .footer-logo {
-    height: 80px;
+    height: 70px;
+  }
+
+  .footer-brand-name {
+    font-size: 1.5rem;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+  }
+
+  .social-icons {
+    font-size: 1.3rem;
+  }
+
+  .footer-heading {
+    font-size: 0.95rem;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand-name {
+    font-size: 1.25rem;
+  }
+
+  .footer-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .social-icons {
+    font-size: 1.2rem;
+    gap: 0.75rem;
+  }
+
+  .footer-heading {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1rem;
+    font-size: 0.75rem;
   }
 }
 </style>

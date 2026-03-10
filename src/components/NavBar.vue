@@ -7,18 +7,25 @@
         <span class="logo-text">Elantor</span>
       </router-link>
       
-      <div class="nav-menu">
+      <button class="menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen" :class="{ active: mobileMenuOpen }">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-menu" :class="{ active: mobileMenuOpen }">
         <router-link 
           v-for="item in menuItems" 
           :key="item.path" 
           :to="item.path" 
           class="nav-link"
           :class="{ active: isActive(item.path) }"
+          @click="mobileMenuOpen = false"
         >
           {{ item.name }}
           <span class="nav-underline"></span>
         </router-link>
-        <router-link to="/contact" class="btn-cta">Get a Quote</router-link>
+        <router-link to="/contact" class="btn-cta" @click="mobileMenuOpen = false">Get a Quote</router-link>
       </div>
     </div>
   </nav>
@@ -31,6 +38,7 @@ export default {
     return {
       isScrolled: false,
       currentRoute: '/',
+      mobileMenuOpen: false,
       menuItems: [
         { name: 'Home', path: '/' },
         { name: 'Product', path: '/product' },
@@ -42,6 +50,7 @@ export default {
   watch: {
     '$route.path'(newPath) {
       this.currentRoute = newPath
+      this.mobileMenuOpen = false
     }
   },
   mounted() {
@@ -92,7 +101,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px; /* 增加导航栏高度以容纳更大的 Logo 和文字 */
+  height: 90px;
 }
 
 .navbar.scrolled .navbar-content {
@@ -102,7 +111,7 @@ export default {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* 稍微增加图标和文字的间距 */
+  gap: 0.75rem;
   text-decoration: none;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -113,23 +122,23 @@ export default {
 }
 
 .logo-icon-img {
-  height: 70px; /* 显著放大图标 */
+  height: 70px;
   width: auto;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(45, 122, 62, 0.1));
-  margin-top: -10px; /* 向上微调，抵消图标自带的底部留白，使其与文字中心线对齐 */
+  margin-top: -10px;
 }
 
 .navbar.scrolled .logo-icon-img {
-  height: 60px; /* 滚动时依然保持较大的尺寸 */
-  margin-top: -8px; /* 滚动时同步微调 */
+  height: 60px;
+  margin-top: -8px;
 }
 
 .logo-text {
-  font-size: 3.2rem; /* 大幅增加字号以匹配 70px 的图标高度 */
+  font-size: 3.2rem;
   font-weight: 700;
   color: #2d7a3e;
-  letter-spacing: -1px; /* 紧凑一点更有品牌感 */
+  letter-spacing: -1px;
   transition: font-size 0.3s ease;
   line-height: 1;
   display: flex;
@@ -137,7 +146,7 @@ export default {
 }
 
 .navbar.scrolled .logo-text {
-  font-size: 2.8rem; /* 滚动时同步缩放 */
+  font-size: 2.8rem;
 }
 
 .nav-menu {
@@ -188,6 +197,7 @@ export default {
   box-shadow: 0 4px 12px rgba(45, 122, 62, 0.2);
   cursor: pointer;
   border: none;
+  display: inline-block;
 }
 
 .btn-cta:hover {
@@ -196,22 +206,108 @@ export default {
   transform: translateY(-2px);
 }
 
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 0.35rem;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2.5px;
+  background-color: #2d7a3e;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 @media (max-width: 768px) {
   .navbar-content {
     padding: 0 1rem;
+    height: 70px;
+  }
+
+  .navbar.scrolled .navbar-content {
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .logo-icon-img {
+    height: 40px;
+    margin-top: -6px;
+  }
+
+  .navbar.scrolled .logo-icon-img {
+    height: 35px;
+    margin-top: -5px;
+  }
+
+  .navbar.scrolled .logo-text {
+    font-size: 1.3rem;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 
   .nav-menu {
-    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(45, 122, 62, 0.1);
+  }
+
+  .nav-menu.active {
+    max-height: 400px;
   }
 
   .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(45, 122, 62, 0.05);
+  }
+
+  .nav-underline {
+    display: none;
   }
 
   .btn-cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
+    margin: 0.75rem 1.5rem;
+    width: calc(100% - 3rem);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    padding: 0 0.75rem;
   }
 
   .logo-text {
@@ -219,7 +315,19 @@ export default {
   }
 
   .logo-icon-img {
-    height: 30px;
+    height: 35px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .btn-cta {
+    margin: 0.5rem 1rem;
+    width: calc(100% - 2rem);
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
   }
 }
 </style>

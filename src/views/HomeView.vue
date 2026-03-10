@@ -311,17 +311,147 @@ export default {
   opacity: 0.9;
 }
 
+.grid.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid.grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 60vh;
+    margin-top: 70px;
+    padding: 2rem 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .hero-buttons {
     flex-direction: column;
+  }
+
+  .grid.grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .grid.grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .scenario-card {
+    height: 250px;
+  }
+
+  .why-item {
+    padding: 1.5rem;
+  }
+
+  .feature-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 50vh;
+    margin-top: 60px;
+    padding: 1rem 0;
+  }
+
+  .hero-content {
+    padding: 0 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-indicators {
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .carousel-indicators span {
+    width: 8px;
+    height: 8px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .scenario-card {
+    height: 200px;
+  }
+
+  .scenario-overlay {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .why-item {
+    padding: 1rem;
+  }
+
+  .why-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .why-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .why-item p {
+    font-size: 0.85rem;
   }
 }
 </style>

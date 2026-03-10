@@ -109,6 +109,7 @@ export default {
     const ulvDetail3 = require('@/assets/images/detail-3.jpg');
     const ulvProductSafety = require("@/assets/images/product-safety.png");
     const ulvDetail5Cropped = require("@/assets/images/detail-5-cropped.jpg");
+    const ulvVideo = '/videos/ulv-cold-fogger-demo.mp4'; // Public folder video
 
     const tsf35dNozzle = require('@/assets/images/products/tsf-35d/tsf-35d-nozzle.jpg');
     const tsf35dSide = require('@/assets/images/products/tsf-35d/tsf-35d-side.jpg');
@@ -154,7 +155,7 @@ export default {
         { src: ulvDetail5Cropped, title: 'Professional Grade', desc: 'Hospital-grade disinfection' },
         { src: ulvProductWorking, title: 'In Action', desc: 'Real-world application' }
       ],
-      video: null
+      video: ulvVideo
     };
 
     const tsf35dThermalFogger = {
@@ -418,21 +419,41 @@ export default {
   color: var(--gray-600);
 }
 
+.grid.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  
+
   .product-images {
     position: static;
+    top: auto;
   }
-  
+
+  .main-image {
+    height: 300px;
+  }
+
+  .thumbnail {
+    height: 60px;
+  }
+
   .function-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .product-buttons {
     flex-direction: column;
+  }
+  
+  .grid.grid-2 {
+    grid-template-columns: 1fr;
   }
 }
 </style>
