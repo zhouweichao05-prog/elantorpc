@@ -202,10 +202,31 @@ export default {
           { label: 'Dimensions (shipping)', value: '1290x270x340MM' }
         ],
         features: [
-          'High-Power Combustion System - Delivers 17.6-19.3KW output for superior fog generation and rapid disinfection coverage.',
-          'Efficient Fuel Consumption - Optimized combustion engine consumes only 1.8-2.2L/H, providing extended operation time.',
-          'Flexible Flow Rate Control - Adjustable flow rate from 8-42L/H with oil, allowing precise application for different scenarios.',
-          'Portable Battery-Powered - Operates on 4x1.5V DC batteries, providing cordless mobility and convenience.'
+          'Thermal Fogger TSF35D - Durable, High-Performance, and Easy to Operate',
+          'The Thermal Fogger TSF35D is designed for optimal performance, ease of use, and long-lasting reliability. This model offers a powerful fogging solution for both commercial and industrial applications, providing exceptional results for pest control and disinfection.',
+          'Key Features:',
+          'Robust Construction: Made with high-quality stainless steel for the fuel tank, fog tube, resonator, cooling jacket, and protective shield, ensuring long-lasting performance and reliability.',
+          'Corrosion-Resistant Design: Critical components like seals, gaskets, and diaphragms that come in contact with chemicals are made from Teflon and Viton, ensuring superior corrosion resistance and an extended lifespan.',
+          'Efficient Start-up: Features a no-spark plug ignition system, allowing for quick start-ups and minimal maintenance.',
+          'Low Maintenance: Designed for ease of use and long-term reliability with minimal upkeep required.',
+          'Accessories Included:',
+          'The TSF35D is provided with a comprehensive set of accessories, including:',
+          '• Tool bag',
+          '• Spare parts',
+          '• Funnels',
+          'These ensure your machine operates seamlessly for over 6 years.',
+          'Applications:',
+          'The Thermal Fogger TSF35D is versatile and suitable for dispensing both water- and oil-based chemicals, including:',
+          '• Pesticides, fungicides, disinfectants, miticides, and poultry vaccines',
+          '• Odor neutralizers',
+          'It is commonly used for:',
+          '• Agricultural crop protection',
+          '• Public health disinfection (including mosquito control, malaria, dengue fever, and pest control)',
+          'Ideal for sanitation professionals, public health protection, and pest control services.',
+          'Why Choose TSF35D?',
+          'High Efficiency: Designed for maximum chemical dispersion, ensuring effective coverage with fewer chemicals.',
+          'Durability: Built to withstand continuous use with top-quality materials and construction.',
+          'Versatility: Can be used for a wide range of applications, from agriculture to public health.'
         ],
         video: '/videos/tsf-35d-intro.mp4'
       }
