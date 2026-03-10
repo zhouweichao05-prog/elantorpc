@@ -182,21 +182,23 @@ export default {
           { src: tsf35dDetail, alt: 'TSF-35D Engine Detail' }
         ],
         specs: [
-          { label: 'Power Supply', value: 'AC220V or 110V' },
-          { label: 'Power', value: '1000W' },
-          { label: 'Tank Capacity', value: '5L' },
-          { label: 'Sprayer Volume', value: '470ml/min (adjustable)' },
-          { label: 'Droplet Size', value: '5-150 μm' },
-          { label: 'Effective Range', value: '6-8m' },
-          { label: 'Net Weight', value: '2.6kg' },
-          { label: 'Gross Weight', value: '3.2kg' },
-          { label: 'Measurement(mm)', value: '480*280*260' }
+          { label: 'Model', value: 'TSF-35D' },
+          { label: 'Combustion Chamber Output', value: '17.6-19.3KW' },
+          { label: 'Fuel Consumption', value: '1.8-2.2L/H' },
+          { label: 'Flow Rate (with oil)', value: '8-42L/H' },
+          { label: 'Fuel Tank Capacity', value: '1.2L' },
+          { label: 'Solution Tank Capacity', value: '5.5L' },
+          { label: 'Energy', value: 'DC6V (4x1.5V)' },
+          { label: 'Weight (empty)', value: '8.0kg' },
+          { label: 'Dimensions (LxWxH)', value: '1150x270x330MM' },
+          { label: 'Weight (empty, shipping)', value: '12 kg' },
+          { label: 'Dimensions (shipping)', value: '1290x270x340MM' }
         ],
         features: [
-          'Robust Stainless Steel Build - Constructed with high-grade stainless steel to withstand harsh chemicals and extreme operating environments.',
-          'Precision Fog Generation - Optimized combustion system produces high-density fog that stays suspended longer for maximum effectiveness.',
-          'Ergonomic Design - Lightweight and well-balanced construction makes it comfortable to operate for extended periods.',
-          'Complete Accessory Kit - Includes all necessary components and tools for easy setup, operation, and maintenance.'
+          'High-Power Combustion System - Delivers 17.6-19.3KW output for superior fog generation and rapid disinfection coverage.',
+          'Efficient Fuel Consumption - Optimized combustion engine consumes only 1.8-2.2L/H, providing extended operation time.',
+          'Flexible Flow Rate Control - Adjustable flow rate from 8-42L/H with oil, allowing precise application for different scenarios.',
+          'Portable Battery-Powered - Operates on 4x1.5V DC batteries, providing cordless mobility and convenience.'
         ]
       }
     ];
