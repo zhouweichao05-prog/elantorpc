@@ -267,10 +267,10 @@ export default {
 .main-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: contain; /* 确保图片完整显示，不被裁剪 */
   border-radius: 1rem;
   margin-bottom: 1rem;
-  background-color: var(--gray-100);
+  background-color: #f5f5f5; /* 浅灰色背景，确保图片周围显示清晰 */
 }
 
 .thumbnail-grid {
