@@ -72,11 +72,15 @@
           <div class="detail-header">
             <div class="detail-images">
               <div class="main-image-wrapper">
-                <img :src="selectedImage" :alt="selectedProduct.name" class="main-image">
+                <img v-if="selectedMediaType === 'image'" :src="selectedImage" :alt="selectedProduct.name" class="main-image">
+                <video v-if="selectedMediaType === 'video'" :src="selectedImage" controls class="main-video"></video>
               </div>
               <div class="thumbnail-images">
-                <button v-for="(img, idx) in selectedProduct.images" :key="idx" @click="selectedImage = img.src" :class="{ active: selectedImage === img.src }" class="thumb-btn">
-                  <img :src="img.src" :alt="img.alt">
+                <button v-for="(media, idx) in selectedProduct.images" :key="idx" @click="selectMedia(media)" :class="{ active: selectedImage === media.src }" class="thumb-btn">
+                  <img v-if="media.type === 'image'" :src="media.src" :alt="media.alt">
+                  <div v-if="media.type === 'video'" class="video-thumb-placeholder">
+                    <span class="play-icon">▶</span>
+                  </div>
                 </button>
               </div>
             </div>
@@ -152,10 +156,11 @@ export default {
         image: ulvProductMain,
         description: 'Professional electric ULV cold fogger for rapid disinfection',
         images: [
-          { src: ulvProductMain, alt: 'Main' },
-          { src: ulvProductWorking, alt: 'Working' },
-          { src: ulvDetail1, alt: 'Detail 1' },
-          { src: ulvDetail2, alt: 'Detail 2' }
+          { src: ulvProductMain, alt: 'Main', type: 'image' },
+          { src: ulvProductWorking, alt: 'Working', type: 'image' },
+          { src: ulvDetail1, alt: 'Detail 1', type: 'image' },
+          { src: ulvDetail2, alt: 'Detail 2', type: 'image' },
+          { src: '/videos/ulv-cold-fogger-intro.mp4', alt: 'Video', type: 'video' }
         ],
         specs: [
           { label: 'Atomization Volume', value: '0~470 ml/min (Adjustable)' },
@@ -185,10 +190,11 @@ export default {
         image: tsf35dFull,
         description: 'High-efficiency thermal fogger for pest control and disinfection',
         images: [
-          { src: tsf35dFull, alt: 'TSF-35D Full View' },
-          { src: tsf35dSide, alt: 'TSF-35D Side View' },
-          { src: tsf35dNozzle, alt: 'TSF-35D Nozzle Detail' },
-          { src: tsf35dDetail, alt: 'TSF-35D Engine Detail' }
+          { src: tsf35dFull, alt: 'TSF-35D Full View', type: 'image' },
+          { src: tsf35dSide, alt: 'TSF-35D Side View', type: 'image' },
+          { src: tsf35dNozzle, alt: 'TSF-35D Nozzle Detail', type: 'image' },
+          { src: tsf35dDetail, alt: 'TSF-35D Engine Detail', type: 'image' },
+          { src: '/videos/tsf-35d-intro.mp4', alt: 'Video', type: 'video' }
         ],
         specs: [
           { label: 'Model', value: 'TSF-35D' },
@@ -221,6 +227,7 @@ export default {
       currentCategoryLabel: 'All Products',
       selectedProduct: null,
       selectedImage: null,
+      selectedMediaType: 'image', // 'image' or 'video'
       searchQuery: '',
       showTopBtn: false
     };
@@ -253,9 +260,15 @@ export default {
       if (product) {
         this.selectedProduct = product;
         this.selectedImage = product.images[0].src;
+        this.selectedMediaType = product.images[0].type || 'image';
         this.viewMode = 'detail';
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    },
+    
+    selectMedia(media) {
+      this.selectedImage = media.src;
+      this.selectedMediaType = media.type || 'image';
     },
     
     filterProducts() {
@@ -577,6 +590,28 @@ export default {
   height: 100%;
   object-fit: contain;
   padding: 1rem;
+}
+
+.main-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.video-thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.play-icon {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .thumbnail-images {
