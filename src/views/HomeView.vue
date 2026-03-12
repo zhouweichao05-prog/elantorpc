@@ -102,15 +102,15 @@ export default {
         'carousel-backpack.jpg'
       ],
       features: [
-        { title: 'Atomization Volume', desc: '0~470 ml/min (Adjustable)' },
-        { title: 'Power', desc: '1000 W, AC 110V 50Hz optional' },
-        { title: 'Particle size', desc: '5-45 μm (Adjustable)' },
-        { title: 'Tank Capacity', desc: '5L' },
-        { title: 'Effective range', desc: '6-8m' },
-        { title: 'Rpm', desc: '32,000 rpm' },
-        { title: 'Net weight', desc: '2.6kg / 5.7 lbs' },
-        { title: 'Gross weight', desc: '3.4 kg / 7.49 lbs' },
-        { title: 'Measurement', desc: '470*280*240mm' }
+        { title: 'CE Certified Products', desc: 'All products meet CE and international safety standards for worry-free compliance.' },
+        { title: 'Quality Inspection', desc: 'Every unit is fully tested before shipment to ensure consistent performance.' },
+        { title: 'Fast Delivery', desc: 'Orders dispatched within 3–5 business days with reliable global logistics.' },
+        { title: 'OEM & ODM Support', desc: 'Custom branding, labeling, and specification adjustments available on request.' },
+        { title: '1-Year Warranty', desc: 'Full warranty coverage on all products with responsive after-sales support.' },
+        { title: 'Spare Parts Supply', desc: 'Long-term spare parts availability to keep your equipment running at all times.' },
+        { title: 'Technical Support', desc: 'Professional technical guidance provided via WhatsApp, email, and video call.' },
+        { title: 'Competitive Pricing', desc: 'Factory-direct pricing with flexible MOQ to suit importers of all sizes.' },
+        { title: 'Trusted by 50+ Countries', desc: 'Proven track record with distributors and buyers across more than 50 countries.' }
       ],
       scenarios: [
         { title: 'Hospital', desc: 'Medical disinfection', image: require('@/assets/images/scenarios/hospital.jpg') },
