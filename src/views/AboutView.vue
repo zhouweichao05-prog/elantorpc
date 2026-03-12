@@ -4,7 +4,7 @@
     <section class="section bg-primary-700 text-white" style="margin-top: 80px;">
       <div class="container text-center">
         <h1>About Elantor</h1>
-        <p class="section-subtitle text-white">A professional ULV Cold Fogger manufacturer dedicated to providing world-class fogging solutions.</p>
+        <p class="section-subtitle text-white">Professional Pest Control Equipment Manufacturer</p>
       </div>
     </section>
 
