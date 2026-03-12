@@ -142,6 +142,13 @@ export default {
     const mf100Detail2 = require('@/assets/images/mf100/mf100-detail2.jpg');
     const mf100Application = require('@/assets/images/mf100/mf100-application.png');
     const mf100Package = require('@/assets/images/mf100/mf100-package.jpg');
+    const backpackMain = require('@/assets/images/products/backpack-fogger/backpack-main.jpg');
+    const backpackSide = require('@/assets/images/products/backpack-fogger/backpack-side.jpg');
+    const backpackDetail = require('@/assets/images/products/backpack-fogger/backpack-detail.jpg');
+    const backpackFront = require('@/assets/images/products/backpack-fogger/backpack-front.jpg');
+    const backpackAccessories = require('@/assets/images/products/backpack-fogger/backpack-accessories.jpg');
+    const backpackBox = require('@/assets/images/products/backpack-fogger/backpack-box.jpg');
+    const backpackSpecs = require('@/assets/images/products/backpack-fogger/backpack-specs.jpg');
 
     // Product catalog
     const allProducts = [
@@ -239,7 +246,7 @@ export default {
         id: 'mf100',
         name: 'Mini Mist Fogger MF-100',
         model: 'MF-100',
-        category: 'mist',
+        category: 'thermal',
         image: mf100Main,
         description: 'Portable mini mist fogger for small-scale pest control and disinfection',
         images: [
@@ -286,6 +293,63 @@ export default {
           'Versatility: Multiple fogging modes for different applications'
         ],
         video: null
+      },
+      {
+        id: 'backpack-fogger',
+        name: 'Portable Backpack Thermal Fogger',
+        model: 'Backpack Fogger',
+        category: 'thermal',
+        image: backpackMain,
+        description: 'High-power portable backpack gasoline thermal fogger for large-area pest control and disinfection',
+        images: [
+          { src: backpackMain, alt: 'Backpack Fogger Front View', type: 'image' },
+          { src: backpackSide, alt: 'Backpack Fogger Side View', type: 'image' },
+          { src: backpackDetail, alt: 'Backpack Fogger Detail', type: 'image' },
+          { src: backpackFront, alt: 'Backpack Fogger Full View', type: 'image' },
+          { src: backpackAccessories, alt: 'Accessories Included', type: 'image' },
+          { src: backpackBox, alt: 'Package Contents', type: 'image' },
+          { src: backpackSpecs, alt: 'Product Specifications', type: 'image' },
+          { src: '/videos/backpack-fogger-intro.mp4', alt: 'Product Video', type: 'video' }
+        ],
+        specs: [
+          { label: 'Working Temperature', value: '-10°C to 35°C' },
+          { label: 'Air Humidity', value: '30–80%' },
+          { label: 'Spray Volume', value: '50–60 L/h' },
+          { label: 'Medicine Tank Volume', value: '7.5L' },
+          { label: 'Auxiliary Tank Volume', value: '7.5L' },
+          { label: 'Fuel Tank Volume', value: '2.0L' },
+          { label: 'Machine Weight', value: '7.5 kg' },
+          { label: 'Host Dimensions (LxWxH)', value: '430×150×170 mm' },
+          { label: 'Medicine Box Size', value: '430×300×400 mm' },
+          { label: 'Fuel Type', value: 'Unleaded Gasoline (no lubricant)' },
+          { label: 'Fuel Consumption', value: '3.0 L/h' },
+          { label: 'Ignition Power', value: '24V Lithium Battery' }
+        ],
+        features: [
+          'Portable Backpack Thermal Fogger - High Power, Large Coverage, Easy to Carry',
+          'This high-power backpack thermal fogger is engineered for professional-grade pest control, agricultural spraying, and disinfection over large areas. With a powerful gasoline engine and a generous 7.5L medicine tank, it delivers outstanding coverage and efficiency.',
+          'Key Features:',
+          'High-Power Gasoline Engine: Delivers a spray volume of 50–60 L/h for rapid, large-area coverage — ideal for farms, orchards, forests, and public spaces.',
+          'Large Dual-Tank Design: 7.5L medicine tank + 7.5L auxiliary tank + 2.0L fuel tank for extended operation without frequent refilling.',
+          'Backpack Ergonomics: Comfortable shoulder-strap backpack design distributes weight evenly, reducing fatigue during prolonged use.',
+          '24V Lithium Battery Ignition: Reliable electric ignition system for quick, hassle-free start-up every time.',
+          'Wide Operating Range: Functions effectively in temperatures from -10°C to 35°C and humidity of 30–80%, suitable for diverse climates.',
+          'Simple Structure & Easy Maintenance: Straightforward mechanical design allows for quick field repairs with minimal tools.',
+          'Accessories Included:',
+          'Complete accessory kit including tool bag, spare parts, funnels, shoulder strap, and protective mask — everything needed for immediate deployment.',
+          'Applications:',
+          'Agricultural crop protection — pesticide and fungicide application for orchards, farms, and plantations',
+          'Forest and green space management — mosquito control and pest prevention',
+          'Livestock and poultry farm disinfection',
+          'Public health and epidemic prevention — disinfection of large outdoor and semi-enclosed areas',
+          'Greenhouse and nursery treatment',
+          'Why Choose This Backpack Fogger?',
+          'Massive Coverage: 50–60 L/h spray rate covers large areas quickly, saving time and labor.',
+          'Fuel Efficient: Uses only 3.0 L/h of unleaded gasoline for cost-effective operation.',
+          'Professional Grade: Built for continuous commercial use with durable materials and reliable ignition.',
+          'Ready Stock: Available for immediate shipment with full accessory kit included.'
+        ],
+        video: '/videos/backpack-fogger-intro.mp4'
       }
     ];
 
