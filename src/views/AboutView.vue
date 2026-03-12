@@ -14,8 +14,15 @@
         <div class="story-grid">
           <div>
             <h2>Our Story</h2>
-            <p>Elantor was founded with a clear mission: to provide professional-grade ULV cold fogging equipment that helps protect people, animals, and environments from harmful pathogens and pests.</p>
-            <p>With over a decade of manufacturing experience, we have developed a comprehensive range of ULV cold foggers that combine advanced technology with user-friendly design. Our products are trusted by healthcare facilities, agricultural businesses, and public health organizations across more than 50 countries.</p>
+            <p>Elantor was founded with a clear mission: to provide professional-grade pest control equipment that helps protect people, animals, and environments from harmful pathogens and pests.</p>
+            <p>With over a decade of manufacturing experience, we have developed a comprehensive range of fogging solutions to meet diverse needs. Our product lineup includes:</p>
+            <ul>
+              <li><strong>YR-500 ULV Cold Fogger:</strong> An electric-powered fogger ideal for indoor disinfection and pest control, delivering ultra-low volume droplets for maximum coverage.</li>
+              <li><strong>TSF-35D Thermal Fogger:</strong> A gasoline-powered thermal fogger designed for outdoor use, creating a dense fog that penetrates thick vegetation.</li>
+              <li><strong>MF-100 Mini Mist Fogger:</strong> A portable, LPG-powered fogger for smaller-scale applications, offering both mist and fog modes.</li>
+              <li><strong>Portable Backpack Thermal Fogger:</strong> A versatile, gasoline-powered backpack fogger for large-scale outdoor applications, combining power and portability.</li>
+            </ul>
+            <p>Our products are trusted by healthcare facilities, agricultural businesses, and public health organizations across more than 50 countries. We are committed to continuous innovation, quality, and customer satisfaction.</p>
             <router-link to="/contact" class="btn-primary">Get in Touch</router-link>
           </div>
           
