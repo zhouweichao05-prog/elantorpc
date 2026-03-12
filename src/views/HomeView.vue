@@ -13,8 +13,8 @@
       </div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <h1 class="hero-title">ULV Cold Fogger by Elantor</h1>
-        <p class="hero-subtitle">Spraying 1000 Square Meters in Just 10 Minutes</p>
+        <h1 class="hero-title">Professional Pest Control Equipment Manufacturer</h1>
+        <p class="hero-subtitle">10 Years of R&D and Manufacturing Experience</p>
         <div class="hero-buttons">
           <router-link to="/product" class="btn-primary">View Product</router-link>
           <router-link to="/contact" class="btn-outline">Get a Quote</router-link>
@@ -33,8 +33,7 @@
     <!-- Features Section -->
     <section class="section bg-gray-50">
       <div class="container">
-        <h2 class="section-title">5 Features Quality Guarantee</h2>
-        <p class="section-subtitle">Our ULV Cold Fogger is engineered with precision to deliver outstanding performance.</p>
+        <h2 class="section-title">5 Features Customer Guarantee</h2>
         
         <div class="grid grid-3">
           <div v-for="(feature, idx) in features" :key="idx" class="card p-8">
@@ -97,7 +96,10 @@ export default {
     return {
       currentSlide: 0,
       carouselImages: [
-        'product-working.jpg'
+        'product-working.jpg',
+        'carousel-tsf35d.jpg',
+        'carousel-mf100.jpg',
+        'carousel-backpack.jpg'
       ],
       features: [
         { title: 'Atomization Volume', desc: '0~470 ml/min (Adjustable)' },
