@@ -106,7 +106,7 @@ export default {
         { title: 'Quality Inspection', desc: 'Every unit is fully tested before shipment to ensure consistent performance.' },
         { title: 'Fast Delivery', desc: 'Orders dispatched within 3–5 business days with reliable global logistics.' },
         { title: 'OEM & ODM Support', desc: 'Custom branding, labeling, and specification adjustments available on request.' },
-        { title: '1-Year Warranty', desc: 'Full warranty coverage on all products with responsive after-sales support.' },
+        { title: 'Secure Packaging', desc: 'Reinforced export-standard packaging to ensure products arrive safely without damage.' },
         { title: 'Spare Parts Supply', desc: 'Long-term spare parts availability to keep your equipment running at all times.' },
         { title: 'Technical Support', desc: 'Professional technical guidance provided via WhatsApp, email, and video call.' },
         { title: 'Competitive Pricing', desc: 'Factory-direct pricing with flexible MOQ to suit importers of all sizes.' },
