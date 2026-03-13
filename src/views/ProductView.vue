@@ -410,6 +410,53 @@ export default {
           'Reliable Quality: Built with durable materials for long-lasting, consistent performance.'
         ],
         video: null
+      },
+      {
+        id: 'spray-backpack',
+        name: 'Stainless Steel Backpack Pressure Sprayer',
+        model: 'ZL-210A',
+        category: 'spray',
+        image: require('@/assets/images/products/spray-backpack/backpack-main.jpg'),
+        description: 'Professional SUS-304 stainless steel backpack pressure sprayer with pressure gauge, Viton seals, and brass adjustable nozzle for all-chemical compatibility',
+        images: [
+          { src: require('@/assets/images/products/spray-backpack/backpack-main.jpg'), alt: 'Main View', type: 'image' },
+          { src: require('@/assets/images/products/spray-backpack/backpack-gauge.jpg'), alt: 'Pressure Gauge Detail', type: 'image' },
+          { src: require('@/assets/images/products/spray-backpack/backpack-top.jpg'), alt: 'Top View', type: 'image' },
+          { src: require('@/assets/images/products/spray-backpack/backpack-side.jpg'), alt: 'Side View', type: 'image' },
+          { src: '/videos/backpack-sprayer.mp4', alt: 'Product Video', type: 'video' }
+        ],
+        specs: [
+          { label: 'Model', value: 'ZL-210A Series (21012A / 21014A / 21016A)' },
+          { label: 'Tank Capacity', value: '12L (3GAL) / 14L (3.5GAL) / 16L (4GAL)' },
+          { label: 'Working Pressure', value: '25–55 psi' },
+          { label: 'Tank Material', value: 'SUS-304 Stainless Steel' },
+          { label: 'Pump Material', value: 'SUS-304 Stainless Steel' },
+          { label: 'Spray Wand', value: 'SUS-304 Stainless Steel' },
+          { label: 'Seal Material', value: 'Viton (Chemical Resistant)' },
+          { label: 'Nozzle', value: 'Brass, Adjustable' },
+          { label: 'Shut-off Valve', value: 'Brass with Lock-on Feature' },
+          { label: 'Pressure Gauge', value: 'Built-in with Safety Relief Valve' },
+          { label: 'Dimensions (16L)', value: '22 × 22 × 71 cm' },
+          { label: 'Pack Qty', value: '1 per carton' }
+        ],
+        features: [
+          'Stainless Steel Backpack Pressure Sprayer (210A Series) — Industrial-Grade Chemical Spraying Solution',
+          'The ZL-210A Series is a professional-grade backpack pressure sprayer engineered for demanding agricultural, industrial, and disinfection applications. Constructed entirely from high-quality SUS-304 stainless steel, it delivers exceptional corrosion resistance and long service life.',
+          'Key Features:',
+          'Full SUS-304 Stainless Steel Construction: Tank, pump, and spray wand are all made from premium stainless steel, ensuring maximum durability and resistance to harsh chemicals.',
+          'Viton Seals & Gaskets: Viton material is compatible with virtually all types of chemicals, pesticides, herbicides, and disinfectants, making this sprayer highly versatile.',
+          'Brass Shut-off with Lock-on Feature: Reduces operator fatigue during extended spraying sessions with a convenient lock-on mechanism.',
+          'Adjustable Brass Nozzle: Provides flexible spray patterns from fine mist to concentrated jet, suitable for various application needs.',
+          'Built-in Pressure Gauge & Safety Relief Valve: Allows precise pressure monitoring and safe depressurization before opening the tank.',
+          'Ergonomic Handle & Shoulder Strap: Designed for comfortable carrying and easy pumping during extended use.',
+          'Applications:',
+          'Agricultural pest and weed control — crops, orchards, and greenhouses',
+          'Industrial and construction equipment maintenance — oil and lubricant application',
+          'Public health disinfection — hospitals, schools, and public spaces',
+          'Livestock and poultry farm sanitation',
+          'Available Capacities: 12L (3GAL), 14L (3.5GAL), 16L (4GAL)'
+        ],
+        video: '/videos/backpack-sprayer.mp4'
       }
     ];
 
