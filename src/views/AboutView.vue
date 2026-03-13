@@ -28,7 +28,7 @@
           
           <div class="stats-grid">
             <div class="stat-card">
-              <div class="stat-number">2014</div>
+              <div class="stat-number">2017</div>
               <div class="stat-label">Founded</div>
             </div>
             <div class="stat-card">
@@ -39,10 +39,7 @@
               <div class="stat-number">500+</div>
               <div class="stat-label">Clients</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">CE</div>
-              <div class="stat-label">Certified</div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -110,7 +107,6 @@ export default {
         }
       ],
       certifications: [
-        { badge: 'CE', name: 'CE Marking', desc: 'European Conformity' },
         { badge: 'RoHS', name: 'RoHS Compliant', desc: 'Hazardous Substances' },
         { badge: 'ISO', name: 'ISO 9001', desc: 'Quality Management' },
         { badge: 'SGS', name: 'SGS Tested', desc: 'Third-party Verified' }
