@@ -9,10 +9,14 @@
     <div class="catalog-container">
       <!-- Left Sidebar - Categories -->
       <aside class="sidebar">
+        <div class="category-section all-products-section">
+          <ul class="category-list">
+            <li><a href="#" @click.prevent="showProductList()" :class="{ active: viewMode === 'list' && activeCategory === 'all' }">All Products</a></li>
+          </ul>
+        </div>
         <div class="category-section">
           <h3 class="category-title">Fogger</h3>
           <ul class="category-list">
-            <li><a href="#" @click.prevent="showProductList()" :class="{ active: viewMode === 'list' && activeCategory === 'all' }">All Products</a></li>
             <li><a href="#" @click.prevent="showProductList('ulv')" :class="{ active: viewMode === 'list' && activeCategory === 'ulv' }">ULV Cold Fogger</a></li>
             <li><a href="#" @click.prevent="showProductList('thermal')" :class="{ active: viewMode === 'list' && activeCategory === 'thermal' }">Thermal Fogger</a></li>
           </ul>
@@ -368,48 +372,8 @@ export default {
           { src: require('@/assets/images/products/spray-ulv/spray-main.jpg'), alt: 'Main View', type: 'image' },
           { src: require('@/assets/images/products/spray-ulv/spray-white.jpg'), alt: 'White Background View', type: 'image' },
           { src: require('@/assets/images/products/spray-ulv/spray-detail1.jpg'), alt: 'Detail 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail2.jpg'), alt: 'Detail 2', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail3.jpg'), alt: 'Detail 3', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail4.jpg'), alt: 'Detail 4', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail5.jpg'), alt: 'Detail 5', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail6.jpg'), alt: 'Detail 6', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail7.jpg'), alt: 'Detail 7', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-application1.jpg'), alt: 'Application 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-application2.jpg'), alt: 'Application 2', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-application3.jpg'), alt: 'Application 3', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-application4.jpg'), alt: 'Application 4', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-package1.jpg'), alt: 'Package 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-package2.jpg'), alt: 'Package 2', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-scene.jpg'), alt: 'Scene', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w1.webp'), alt: 'View 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w2.webp'), alt: 'View 2', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w11.webp'), alt: 'View 11', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w12.webp'), alt: 'View 12', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w13.webp'), alt: 'View 13', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w14.webp'), alt: 'View 14', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w15.webp'), alt: 'View 15', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w16.webp'), alt: 'View 16', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w22.webp'), alt: 'View 22', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w23.webp'), alt: 'View 23', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w24.webp'), alt: 'View 24', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w25.webp'), alt: 'View 25', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w28.webp'), alt: 'View 28', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w29.webp'), alt: 'View 29', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w33.webp'), alt: 'View 33', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w34.webp'), alt: 'View 34', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w34b.webp'), alt: 'View 34b', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w35.webp'), alt: 'View 35', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w36.webp'), alt: 'View 36', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w214.webp'), alt: 'View 214', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-w453.webp'), alt: 'View 453', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature1.png'), alt: 'Feature 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature2.png'), alt: 'Feature 2', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature3.png'), alt: 'Feature 3', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature4.png'), alt: 'Feature 4', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature5.png'), alt: 'Feature 5', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature6.png'), alt: 'Feature 6', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-feature7.png'), alt: 'Feature 7', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-specs-desc.png'), alt: 'Specs Description', type: 'image' }
+          { src: require('@/assets/images/products/spray-ulv/spray-application1.jpg'), alt: 'Application', type: 'image' },
+          { src: '/videos/spray-ulv-intro.mp4', alt: 'Product Video', type: 'video' }
         ],
         specs: [
           { label: 'Product Name', value: '5.6 L Ultra-Low Volume Sprayer' },
@@ -588,6 +552,18 @@ export default {
   padding: 0.75rem 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
+}
+
+.all-products-section {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e8f8f5;
+}
+
+.all-products-section .category-list a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27ae60;
 }
 
 .category-list {
