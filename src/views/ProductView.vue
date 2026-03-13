@@ -12,9 +12,15 @@
         <div class="category-section">
           <h3 class="category-title">Fogger</h3>
           <ul class="category-list">
-            <li><a href="#" @click.prevent="showProductList()" :class="{ active: viewMode === 'list' }">All Products</a></li>
+            <li><a href="#" @click.prevent="showProductList()" :class="{ active: viewMode === 'list' && activeCategory === 'all' }">All Products</a></li>
             <li><a href="#" @click.prevent="showProductList('ulv')" :class="{ active: viewMode === 'list' && activeCategory === 'ulv' }">ULV Cold Fogger</a></li>
             <li><a href="#" @click.prevent="showProductList('thermal')" :class="{ active: viewMode === 'list' && activeCategory === 'thermal' }">Thermal Fogger</a></li>
+          </ul>
+        </div>
+        <div class="category-section">
+          <h3 class="category-title">Sprayer</h3>
+          <ul class="category-list">
+            <li><a href="#" @click.prevent="showProductList('spray')" :class="{ active: viewMode === 'list' && activeCategory === 'spray' }">ULV Sprayer</a></li>
           </ul>
         </div>
       </aside>
@@ -350,6 +356,96 @@ export default {
           'Ready Stock: Available for immediate shipment with full accessory kit included.'
         ],
         video: '/videos/backpack-fogger-intro.mp4'
+      },
+      {
+        id: 'spray-ulv',
+        name: '5.6L Ultra-Low Volume Sprayer',
+        model: 'ELT-SPRAY-5.6L',
+        category: 'spray',
+        image: require('@/assets/images/products/spray-ulv/spray-main.jpg'),
+        description: 'Professional electric ULV sprayer with 5.6L tank for indoor and outdoor disinfection and pest control',
+        images: [
+          { src: require('@/assets/images/products/spray-ulv/spray-main.jpg'), alt: 'Main View', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-white.jpg'), alt: 'White Background View', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail1.jpg'), alt: 'Detail 1', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail2.jpg'), alt: 'Detail 2', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail3.jpg'), alt: 'Detail 3', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail4.jpg'), alt: 'Detail 4', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail5.jpg'), alt: 'Detail 5', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail6.jpg'), alt: 'Detail 6', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail7.jpg'), alt: 'Detail 7', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-application1.jpg'), alt: 'Application 1', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-application2.jpg'), alt: 'Application 2', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-application3.jpg'), alt: 'Application 3', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-application4.jpg'), alt: 'Application 4', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-package1.jpg'), alt: 'Package 1', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-package2.jpg'), alt: 'Package 2', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-scene.jpg'), alt: 'Scene', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w1.webp'), alt: 'View 1', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w2.webp'), alt: 'View 2', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w11.webp'), alt: 'View 11', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w12.webp'), alt: 'View 12', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w13.webp'), alt: 'View 13', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w14.webp'), alt: 'View 14', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w15.webp'), alt: 'View 15', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w16.webp'), alt: 'View 16', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w22.webp'), alt: 'View 22', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w23.webp'), alt: 'View 23', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w24.webp'), alt: 'View 24', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w25.webp'), alt: 'View 25', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w28.webp'), alt: 'View 28', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w29.webp'), alt: 'View 29', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w33.webp'), alt: 'View 33', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w34.webp'), alt: 'View 34', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w34b.webp'), alt: 'View 34b', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w35.webp'), alt: 'View 35', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w36.webp'), alt: 'View 36', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w214.webp'), alt: 'View 214', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-w453.webp'), alt: 'View 453', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature1.png'), alt: 'Feature 1', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature2.png'), alt: 'Feature 2', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature3.png'), alt: 'Feature 3', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature4.png'), alt: 'Feature 4', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature5.png'), alt: 'Feature 5', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature6.png'), alt: 'Feature 6', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-feature7.png'), alt: 'Feature 7', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-specs-desc.png'), alt: 'Specs Description', type: 'image' }
+        ],
+        specs: [
+          { label: 'Product Name', value: '5.6 L Ultra-Low Volume Sprayer' },
+          { label: 'Power Supply', value: '220V 50HZ' },
+          { label: 'Rated Power', value: '1200W' },
+          { label: 'Tank Capacity', value: '5.6L' },
+          { label: 'Maximum Spray Output', value: '400ML/Min' },
+          { label: 'Spray Distance', value: '10-12 Meters' },
+          { label: 'Cable Length', value: '2.5M' },
+          { label: 'Plug Options', value: 'US standards' },
+          { label: 'Dimension', value: '26×22×40CM' },
+          { label: 'Net Weight', value: '3.6 KG' },
+          { label: 'Gross Weight', value: '7 KG' }
+        ],
+        features: [
+          '5.6L Ultra-Low Volume Sprayer - Professional Electric Disinfection & Pest Control',
+          'The 5.6L ULV Sprayer is a high-performance electric sprayer designed for efficient disinfection, pest control, and agricultural applications. With a powerful 1200W motor and a generous 5.6L tank, it delivers professional-grade results for both indoor and outdoor use.',
+          'Key Features:',
+          'High-Power 1200W Motor: Delivers a maximum spray output of 400ML/min for rapid, thorough coverage of large areas.',
+          'Large 5.6L Tank Capacity: Reduces the need for frequent refilling, enabling extended operation without interruption.',
+          'Long Spray Distance: Reaches up to 10-12 meters, allowing effective coverage from a safe distance.',
+          'Standard Power Supply: Operates on 220V 50Hz, compatible with standard household and commercial power outlets.',
+          'Portable Design: Compact dimensions (26×22×40CM) and lightweight (3.6KG net weight) for easy transport and storage.',
+          'Long Power Cord: 2.5M cable length provides freedom of movement without the need for extension cords in most settings.',
+          'Applications:',
+          'Indoor and outdoor disinfection — hospitals, schools, offices, warehouses, and public spaces',
+          'Agricultural pest control — greenhouses, nurseries, and crop protection',
+          'Mosquito and insect control in residential and commercial settings',
+          'Livestock and poultry farm sanitation',
+          'Why Choose This ULV Sprayer?',
+          'Professional Performance: 1200W power and 400ML/min output ensure fast, effective coverage.',
+          'Easy to Use: Simple operation suitable for both professional and non-professional users.',
+          'Versatile Application: Suitable for a wide range of disinfection and pest control scenarios.',
+          'Reliable Quality: Built with durable materials for long-lasting, consistent performance.'
+        ],
+        video: null
       }
     ];
 
@@ -376,7 +472,8 @@ export default {
         all: 'All Products',
         ulv: 'ULV Cold Fogger',
         thermal: 'Thermal Fogger',
-        mist: 'Mini Mist Fogger'
+        mist: 'Mini Mist Fogger',
+        spray: 'ULV Sprayer'
       };
       
       this.currentCategoryLabel = labels[category] || 'All Products';
