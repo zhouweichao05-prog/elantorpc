@@ -7,12 +7,12 @@
           v-for="(image, index) in carouselImages" 
           :key="index" 
           class="hero-bg"
-          :class="{ active: currentSlide === index }"
+          :class="{ active: currentSlide === index, 'hero-bg-contain': index === 2 || index === 3 }"
           :style="{ backgroundImage: 'url(' + require('@/assets/images/' + image) + ')' }"
         ></div>
       </div>
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
+      <div class="hero-overlay" :class="{ 'hero-overlay-light': currentSlide === 2 || currentSlide === 3 }"></div>
+      <div class="container hero-content" :class="{ 'hero-content-dark': currentSlide === 2 || currentSlide === 3 }">
         <h1 class="hero-title">Professional Pest Control Equipment Manufacturer</h1>
         <p class="hero-subtitle">10 Years of R&D and Manufacturing Experience</p>
         <div class="hero-buttons">
@@ -183,6 +183,12 @@ export default {
   opacity: 1;
 }
 
+.hero-bg.hero-bg-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f0f4f0;
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -191,6 +197,11 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  transition: background-color 0.5s ease;
+}
+
+.hero-overlay.hero-overlay-light {
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .hero-content {
@@ -198,6 +209,20 @@ export default {
   z-index: 2;
   color: var(--white);
   max-width: 600px;
+  transition: color 0.5s ease;
+}
+
+.hero-content.hero-content-dark {
+  color: #1a1a1a;
+}
+
+.hero-content.hero-content-dark .hero-title {
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.hero-content.hero-content-dark .hero-subtitle {
+  color: #333333;
 }
 
 .hero-title {
