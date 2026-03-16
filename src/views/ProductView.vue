@@ -365,7 +365,7 @@ export default {
         id: 'spray-ulv',
         name: '5.6L Ultra-Low Volume Sprayer',
         model: 'ELT-SPRAY-5.6L',
-        category: 'spray',
+        category: 'ulv',
         image: require('@/assets/images/products/spray-ulv/spray-main.jpg'),
         description: 'Professional electric ULV sprayer with 5.6L tank for indoor and outdoor disinfection and pest control',
         images: [
