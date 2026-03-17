@@ -87,9 +87,9 @@ export default {
       contactDetails: [
         { 
           title: 'Email Address', 
-          value: 'elant_industrial@sina.com',
+          value: 'elantor@ielantor.com',
           icon: '✉️',
-          link: 'mailto:elant_industrial@sina.com'
+          link: 'mailto:elantor@ielantor.com'
         },
         { 
           title: 'WhatsApp', 
