@@ -159,6 +159,11 @@ export default {
     const backpackAccessories = require('@/assets/images/products/backpack-fogger/backpack-accessories.jpg');
     const backpackBox = require('@/assets/images/products/backpack-fogger/backpack-box.jpg');
     const backpackSpecs = require('@/assets/images/products/backpack-fogger/backpack-specs.jpg');
+    const yf450Main = require('@/assets/images/products/yf-450/yf450-main.jpg');
+    const yf450Side = require('@/assets/images/products/yf-450/yf450-side.jpg');
+    const yf450Back = require('@/assets/images/products/yf-450/yf450-back.jpg');
+    const yf450Front = require('@/assets/images/products/yf-450/yf450-front.jpg');
+    const yf450Angle = require('@/assets/images/products/yf-450/yf450-angle.jpg');
 
     // Product catalog
     const allProducts = [
@@ -457,6 +462,62 @@ export default {
           'Available Capacities: 12L (3GAL), 14L (3.5GAL), 16L (4GAL)'
         ],
         video: '/videos/backpack-sprayer.mp4'
+      },
+      {
+        id: 'yf-450',
+        name: 'Electric ULV Cold Fogger YF-450',
+        model: 'YF-450',
+        category: 'ulv',
+        image: yf450Main,
+        description: 'Portable electric ULV cold fogger with 4.5L tank, 1200W motor, 6-8m spray range for disinfection and pest control',
+        images: [
+          { src: yf450Main, alt: 'YF-450 Main View', type: 'image' },
+          { src: yf450Side, alt: 'YF-450 Side View', type: 'image' },
+          { src: yf450Back, alt: 'YF-450 Back View', type: 'image' },
+          { src: yf450Front, alt: 'YF-450 Front View', type: 'image' },
+          { src: yf450Angle, alt: 'YF-450 Angle View', type: 'image' },
+          { src: '/videos/yf450-intro.mp4', alt: 'Product Video', type: 'video' }
+        ],
+        specs: [
+          { label: 'Model', value: 'YF-450' },
+          { label: 'Product Name', value: 'Electric ULV Cold Fogger Machine' },
+          { label: 'Capacity', value: '4.5L' },
+          { label: 'Power', value: '1200W' },
+          { label: 'Voltage', value: '110V/60Hz, 220V–240V/50Hz' },
+          { label: 'Spray Range', value: '6–8 meters' },
+          { label: 'Sprayer Type', value: 'Pump' },
+          { label: 'Power Source', value: 'Electric' },
+          { label: 'Nozzle', value: 'Spray' },
+          { label: 'Feature', value: 'Automatic' },
+          { label: 'Color', value: 'White & Blue' },
+          { label: 'Net Weight', value: '2.76 kg / 6.08 lbs' },
+          { label: 'Measurement (LxWxH)', value: '390×230×430 mm / 15.35×9×16.9 inch' },
+          { label: 'Place of Origin', value: 'Guangdong, China' }
+        ],
+        features: [
+          'Electric ULV Cold Fogger YF-450 — Portable, Powerful, and Versatile Disinfection Solution',
+          'The YF-450 is a high-performance portable electric ULV cold fogger designed for efficient disinfection, pest control, and sterilization across a wide range of environments. With a powerful 1200W motor and a 4.5L tank, it delivers professional-grade fogging results for both indoor and outdoor use.',
+          'Key Features:',
+          'Powerful 1200W Motor: Delivers strong, consistent fogging performance with a spray range of 6–8 meters, ensuring effective coverage of large areas.',
+          'Large 4.5L Tank Capacity: Reduces the need for frequent refilling, enabling extended continuous operation.',
+          'Wide Voltage Compatibility: Supports both 110V/60Hz and 220V–240V/50Hz, making it suitable for use in markets worldwide.',
+          'Automatic Pump System: Fully automatic electric pump ensures stable, consistent spray output with minimal operator effort.',
+          'Adjustable Flow Rate: Fine-tune the spray output to suit different application requirements and chemical concentrations.',
+          'Compact & Portable Design: Lightweight at just 2.76 kg with a compact footprint (390×230×430 mm), easy to carry and store.',
+          'CE & UE Certified: Meets international safety and quality standards for worry-free compliance.',
+          'Applications:',
+          'Garden, lawn, and farm spraying — pesticide and fungicide application',
+          'Hospital and clinic disinfection — rapid sterilization of large spaces',
+          'School and office sanitation — regular hygiene maintenance',
+          'Home pest control — mosquito, insect, and mold treatment',
+          'Hotel and hospitality — guest room and common area disinfection',
+          'Why Choose YF-450?',
+          'Professional Performance: 1200W power and 6–8m spray range ensure fast, thorough coverage.',
+          'Global Compatibility: Dual-voltage design supports worldwide use without adapters.',
+          'Ease of Use: Simple automatic operation suitable for both professional and non-professional users.',
+          'Reliable Quality: CE/UE certified with durable construction for long-lasting performance.'
+        ],
+        video: '/videos/yf450-intro.mp4'
       }
     ];
 
