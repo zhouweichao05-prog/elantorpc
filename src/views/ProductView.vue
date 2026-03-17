@@ -375,9 +375,10 @@ export default {
         description: 'Professional electric ULV sprayer with 5.6L tank for indoor and outdoor disinfection and pest control',
         images: [
           { src: require('@/assets/images/products/spray-ulv/spray-main.jpg'), alt: 'Main View', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-white.jpg'), alt: 'White Background View', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-detail1.jpg'), alt: 'Detail 1', type: 'image' },
-          { src: require('@/assets/images/products/spray-ulv/spray-application1.jpg'), alt: 'Application', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail1.jpg'), alt: 'Component Assembly View', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail2.jpg'), alt: 'Side View & Switch Detail', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail3.jpg'), alt: 'Disassembly & Tank Interior', type: 'image' },
+          { src: require('@/assets/images/products/spray-ulv/spray-detail4.jpg'), alt: 'Product Dimensions', type: 'image' },
           { src: '/videos/spray-ulv-intro.mp4', alt: 'Product Video', type: 'video' }
         ],
         specs: [
