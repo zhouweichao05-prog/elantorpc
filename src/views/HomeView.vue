@@ -7,7 +7,7 @@
           v-for="(image, index) in carouselImages" 
           :key="index" 
           class="hero-bg"
-          :class="{ active: currentSlide === index, 'hero-bg-contain': index === 2 || index === 3, 'hero-bg-white': index === 0 }"
+          :class="{ active: currentSlide === index, 'hero-bg-contain': index === 2, 'hero-bg-white': index === 0, 'hero-bg-cover-white': index === 3 }"
           :style="{ backgroundImage: 'url(' + require('@/assets/images/' + image) + ')' }"
         ></div>
       </div>
@@ -190,6 +190,12 @@ export default {
 }
 
 .hero-bg.hero-bg-white {
+  background-size: cover;
+  background-position: center center;
+  background-color: #ffffff;
+}
+
+.hero-bg.hero-bg-cover-white {
   background-size: cover;
   background-position: center center;
   background-color: #ffffff;
