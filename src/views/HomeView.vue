@@ -7,12 +7,12 @@
           v-for="(image, index) in carouselImages" 
           :key="index" 
           class="hero-bg"
-          :class="{ active: currentSlide === index, 'hero-bg-contain': index === 2 || index === 3, 'hero-bg-contain-dark': index === 0 }"
+          :class="{ active: currentSlide === index, 'hero-bg-contain': index === 2 || index === 3, 'hero-bg-white': index === 0 }"
           :style="{ backgroundImage: 'url(' + require('@/assets/images/' + image) + ')' }"
         ></div>
       </div>
-      <div class="hero-overlay" :class="{ 'hero-overlay-light': currentSlide === 2 || currentSlide === 3 }"></div>
-      <div class="container hero-content" :class="{ 'hero-content-dark': currentSlide === 2 || currentSlide === 3 }">
+      <div class="hero-overlay" :class="{ 'hero-overlay-light': currentSlide === 0 || currentSlide === 2 || currentSlide === 3 }"></div>
+      <div class="container hero-content" :class="{ 'hero-content-dark': currentSlide === 0 || currentSlide === 2 || currentSlide === 3 }">
         <h1 class="hero-title">Professional Pest Control Equipment Manufacturer</h1>
         <p class="hero-subtitle">10 Years of R&D and Manufacturing Experience</p>
         <div class="hero-buttons">
@@ -189,10 +189,10 @@ export default {
   background-color: #f0f4f0;
 }
 
-.hero-bg.hero-bg-contain-dark {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #1a1a2e;
+.hero-bg.hero-bg-white {
+  background-size: cover;
+  background-position: center center;
+  background-color: #ffffff;
 }
 
 .hero-overlay {
