@@ -164,6 +164,11 @@ export default {
     const yf450Back = require('@/assets/images/products/yf-450/yf450-back.jpg');
     const yf450Front = require('@/assets/images/products/yf-450/yf450-front.jpg');
     const yf450Angle = require('@/assets/images/products/yf-450/yf450-angle.jpg');
+    const pantryMothMain = require('@/assets/images/products/pantry-moth-trap/pantry-moth-main.jpg');
+    const pantryMothDetail1 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail1.jpg');
+    const pantryMothDetail2 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail2.jpg');
+    const pantryMothDetail3 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail3.jpg');
+    const pantryMothDetail4 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail4.jpg');
 
     // Product catalog
     const allProducts = [
@@ -518,6 +523,61 @@ export default {
           'Reliable Quality: CE/UE certified with durable construction for long-lasting performance.'
         ],
         video: '/videos/yf450-intro.mp4'
+      },
+      {
+        id: 'pantry-moth-trap',
+        name: 'Pantry Moth Glue Trap',
+        model: 'PMT-001',
+        category: 'spray',
+        image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mouse%20and%20insect%20glue%20trap%20packaging%20boxes%20white%20background%20how%20to%20use%20instructions%20bug%20icons%20spider%20fly%20beetle%20professional%20product%20photo&image_size=square',
+        description: 'Non-toxic pantry moth glue trap with natural pheromone attractant for effective kitchen pest control',
+        images: [
+          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20triangular%20shape%20ideal%20home%20product%2011cm%20x%209.7cm%20x%209cm%20dimensions%20white%20background&image_size=landscape_4_3', alt: 'Pantry Moth Trap Main View', type: 'image' },
+          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20trap%20before%20after%20comparison%20quick%20effect%20non%20toxic%20natural%20ingredients%20butterfly%20moths%20stuck%20on%20trap&image_size=landscape_16_9', alt: 'Before & After Effect', type: 'image' },
+          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20glue%20sheets%20stacked%20black%20border%20white%20background%20product%20detail&image_size=landscape_4_3', alt: 'Glue Sheets Detail', type: 'image' },
+          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20triangular%20product%20with%20dimensions%2011cm%204.33inch%209.7cm%203.81inch%209cm%203.54inch%20white%20background&image_size=landscape_4_3', alt: 'Product Dimensions', type: 'image' },
+          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20sticky%20sheet%20with%20protective%20film%20peeled%20off%20black%20grid%20pattern%20white%20background&image_size=landscape_4_3', alt: 'Sticky Sheet with Protective Film', type: 'image' }
+        ],
+        specs: [
+          { label: 'Product Name', value: 'Pantry Moth Glue Trap' },
+          { label: 'Model', value: 'PMT-001' },
+          { label: 'Size', value: '11cm x 9.7cm x 9cm (4.33" x 3.81" x 3.54")' },
+          { label: 'Material', value: 'Premium Cardboard + Strong Adhesive' },
+          { label: 'Attractant', value: 'Natural Pheromone Lure' },
+          { label: 'Coverage Area', value: 'Up to 100 sq. ft' },
+          { label: 'Duration', value: 'Up to 3 months' },
+          { label: 'Package Includes', value: '6 traps per pack' },
+          { label: 'Application', value: 'Kitchen, Pantry, Storage Areas' },
+          { label: 'Safety', value: 'Non-toxic, Eco-friendly' }
+        ],
+        features: [
+          'Pantry Moth Glue Trap — Quick Effect, Non-toxic, Natural Ingredients',
+          'The Ideal Home Pantry Moth Glue Trap is a safe and effective solution for controlling pantry moths in your kitchen and storage areas. Using natural pheromone attractants and strong adhesive, it provides quick results without harmful chemicals.',
+          'Key Features:',
+          'Quick Effect: Powerful pheromone attractant lures male moths to the trap, breaking the breeding cycle and reducing moth populations rapidly.',
+          'Non-toxic Formula: Made with natural ingredients, safe for use around food, children, and pets.',
+          'Strong Adhesive: Premium-grade glue ensures moths stick securely and cannot escape.',
+          'Easy to Use: Simple 4-step setup — open the trap, peel off protective layer, fold into triangular shape, and place in pantry or storage area.',
+          'Long-lasting: Each trap remains effective for up to 3 months, providing continuous protection.',
+          'Discreet Design: Compact triangular shape fits easily in cabinets, shelves, and pantries without taking up much space.',
+          'Reclaim Your Closet In 4 Simple Steps:',
+          '1. Open the trap — Remove from packaging and unfold',
+          '2. Peel off protective layer — Expose the adhesive surface',
+          '3. Fold into place — Form the triangular trap shape',
+          '4. Hang 1-2 traps in closet & replace when full',
+          'Applications:',
+          'Kitchen pantries — protect cereal, flour, grains, and dried goods',
+          'Food storage areas — prevent infestation in cabinets and shelves',
+          'Closets — protect clothing from moth damage',
+          'Garages and basements — control moths in storage boxes',
+          'Why Choose Our Pantry Moth Trap?',
+          'Natural & Safe: Non-toxic ingredients make it safe for food areas',
+          'Effective: Proven pheromone technology attracts male moths',
+          'Easy: No assembly required, ready to use in seconds',
+          'Long-lasting: Each trap works for up to 3 months',
+          'Value Pack: 6 traps per package for comprehensive coverage'
+        ],
+        video: null
       }
     ];
 
