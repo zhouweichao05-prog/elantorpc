@@ -528,7 +528,7 @@ export default {
         id: 'pantry-moth-trap',
         name: 'Pantry Moth Glue Trap',
         model: 'PMT-001',
-        category: 'spray',
+        category: 'other',
         image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mouse%20and%20insect%20glue%20trap%20packaging%20boxes%20white%20background%20how%20to%20use%20instructions%20bug%20icons%20spider%20fly%20beetle%20professional%20product%20photo&image_size=square',
         description: 'Non-toxic pantry moth glue trap with natural pheromone attractant for effective kitchen pest control',
         images: [
