@@ -526,32 +526,31 @@ export default {
       },
       {
         id: 'pantry-moth-trap',
-        name: 'Pantry Moth Glue Trap',
+        name: 'Moth Glue Traps and Sticky Inserts Boards',
         model: 'PMT-001',
         category: 'other',
-        image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mouse%20and%20insect%20glue%20trap%20packaging%20boxes%20white%20background%20how%20to%20use%20instructions%20bug%20icons%20spider%20fly%20beetle%20professional%20product%20photo&image_size=square',
+        image: pantryMothMain,
         description: 'Non-toxic pantry moth glue trap with natural pheromone attractant for effective kitchen pest control',
         images: [
-          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20triangular%20shape%20ideal%20home%20product%2011cm%20x%209.7cm%20x%209cm%20dimensions%20white%20background&image_size=landscape_4_3', alt: 'Pantry Moth Trap Main View', type: 'image' },
-          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20trap%20before%20after%20comparison%20quick%20effect%20non%20toxic%20natural%20ingredients%20butterfly%20moths%20stuck%20on%20trap&image_size=landscape_16_9', alt: 'Before & After Effect', type: 'image' },
-          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20glue%20sheets%20stacked%20black%20border%20white%20background%20product%20detail&image_size=landscape_4_3', alt: 'Glue Sheets Detail', type: 'image' },
-          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20triangular%20product%20with%20dimensions%2011cm%204.33inch%209.7cm%203.81inch%209cm%203.54inch%20white%20background&image_size=landscape_4_3', alt: 'Product Dimensions', type: 'image' },
-          { src: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=pantry%20moth%20glue%20trap%20sticky%20sheet%20with%20protective%20film%20peeled%20off%20black%20grid%20pattern%20white%20background&image_size=landscape_4_3', alt: 'Sticky Sheet with Protective Film', type: 'image' }
+          { src: pantryMothDetail1, alt: 'Pantry Moth Trap Main View', type: 'image' },
+          { src: pantryMothDetail2, alt: 'Before & After Effect', type: 'image' },
+          { src: pantryMothDetail3, alt: 'Glue Sheets Detail', type: 'image' },         
+          { src: pantryMothDetail4, alt: 'Product Dimensions', type: 'image' },
+          { src: pantryMothMain, alt: 'Sticky Sheet with Protective Film', type: 'image' }
         ],
         specs: [
-          { label: 'Product Name', value: 'Pantry Moth Glue Trap' },
+          { label: 'Product Name', value: 'Moth Glue Traps and Sticky Inserts Boards' },
           { label: 'Model', value: 'PMT-001' },
           { label: 'Size', value: '11cm x 9.7cm x 9cm (4.33" x 3.81" x 3.54")' },
           { label: 'Material', value: 'Premium Cardboard + Strong Adhesive' },
           { label: 'Attractant', value: 'Natural Pheromone Lure' },
           { label: 'Coverage Area', value: 'Up to 100 sq. ft' },
           { label: 'Duration', value: 'Up to 3 months' },
-          { label: 'Package Includes', value: '6 traps per pack' },
           { label: 'Application', value: 'Kitchen, Pantry, Storage Areas' },
           { label: 'Safety', value: 'Non-toxic, Eco-friendly' }
         ],
         features: [
-          'Pantry Moth Glue Trap — Quick Effect, Non-toxic, Natural Ingredients',
+          'Moth Glue Traps and Sticky Inserts Boards — Quick Effect, Non-toxic, Natural Ingredients',
           'The Ideal Home Pantry Moth Glue Trap is a safe and effective solution for controlling pantry moths in your kitchen and storage areas. Using natural pheromone attractants and strong adhesive, it provides quick results without harmful chemicals.',
           'Key Features:',
           'Quick Effect: Powerful pheromone attractant lures male moths to the trap, breaking the breeding cycle and reducing moth populations rapidly.',
