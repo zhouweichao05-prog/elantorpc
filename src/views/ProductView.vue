@@ -169,6 +169,10 @@ export default {
     const pantryMothDetail2 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail2.jpg');
     const pantryMothDetail3 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail3.jpg');
     const pantryMothDetail4 = require('@/assets/images/products/pantry-moth-trap/pantry-moth-detail4.jpg');
+    const nanoSprayK5MaxMain = require('@/assets/images/products/nano-spray-k5max/k5max-main.jpg');
+    const nanoSprayK5MaxDetail1 = require('@/assets/images/products/nano-spray-k5max/k5max-detail1.jpg');
+    const nanoSprayK5MaxDetail2 = require('@/assets/images/products/nano-spray-k5max/k5max-detail2.jpg');
+    const nanoSprayK5MaxDetail3 = require('@/assets/images/products/nano-spray-k5max/k5max-detail3.jpg');
 
     // Product catalog
     const allProducts = [
@@ -575,6 +579,58 @@ export default {
           'Easy: No assembly required, ready to use in seconds',
           'Long-lasting: Each trap works for up to 3 months',
           'Value Pack: 6 traps per package for comprehensive coverage'
+        ],
+        video: null
+      },
+      {
+        id: 'nano-spray-k5max',
+        name: 'Nano Spray Machine K5 Max',
+        model: 'K5Max',
+        category: 'spray',
+        image: nanoSprayK5MaxMain,
+        description: 'Rechargeable nano spray gun with 380ML capacity, 15W power, ideal for disinfection and humidification',
+        images: [
+          { src: nanoSprayK5MaxMain, alt: 'K5 Max Main View', type: 'image' },
+          { src: nanoSprayK5MaxDetail1, alt: 'K5 Max Angle View', type: 'image' },
+          { src: nanoSprayK5MaxDetail2, alt: 'K5 Max Nozzle Detail', type: 'image' },
+          { src: nanoSprayK5MaxDetail3, alt: 'K5 Max Specifications', type: 'image' },
+        ],
+        specs: [
+          { label: 'Product Name', value: 'Nano Spray Gun' },
+          { label: 'Model', value: 'K5Max' },
+          { label: 'Rated Power', value: '15W' },
+          { label: 'Battery Capacity', value: '1200mAh' },
+          { label: 'Spray Distance', value: '1-2 meters' },
+          { label: 'Water Tank Capacity', value: '380ML' },
+          { label: 'Working Voltage', value: 'DC 3.7V' },
+          { label: 'Charging Input', value: 'DC 5V/1A' },
+          { label: 'Power Port', value: 'TYPE-C' },
+          { label: 'Charging Time', value: 'Approx. 2 hours' },
+          { label: 'Product Dimensions', value: '210mm x 180mm x 69mm' },
+          { label: 'Net Weight', value: 'Approx. 298g' }
+        ],
+        features: [
+          'Nano Spray Machine K5 Max — Portable, Efficient Disinfection Solution',
+          'The K5Max Nano Spray Gun is a rechargeable handheld disinfection device designed for home, office, and commercial use. With its advanced nano atomization technology, it produces ultra-fine mist particles for even and thorough coverage.',
+          'Key Features:',
+          'Powerful Nano Atomization: 15W power delivers fine mist particles for effective disinfection coverage up to 1-2 meters.',
+          'Large 380ML Tank: Generous water tank capacity reduces frequent refills during extended use.',
+          'Long Battery Life: 1800mAh rechargeable battery provides extended operation time.',
+          'Fast Charging: TYPE-C charging port with DC 5V/1A input for quick 2-hour full charge.',
+          'Ergonomic Design: Comfortable handheld design for easy operation and reduced fatigue.',
+          'Compact & Portable: Lightweight at only 298g, perfect for on-the-go disinfection needs.',
+          'Applications:',
+          'Home disinfection — living rooms, bedrooms, kitchens, and bathrooms',
+          'Office and commercial spaces — desks, meeting rooms, and common areas',
+          'Vehicle disinfection — cars, trucks, and public transportation',
+          'School and daycare facilities — classrooms and play areas',
+          'Beauty and skincare — facial misting and hydration',
+          'Why Choose K5Max?',
+          'Advanced Nano Technology: Produces ultra-fine mist for better coverage',
+          'Rechargeable: Built-in battery for cordless convenience',
+          'Easy to Use: Simple one-button operation',
+          'Versatile: Suitable for various disinfection and humidification needs',
+          'Compact Design: Lightweight and portable for everyday use'
         ],
         video: null
       }
